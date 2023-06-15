@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="loginform.css">
+    <!-- <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/intlTelInput.css"> -->
+    <title>Login-Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="loginsec">
+            <div class="login">LOGIN</div>
+            <button class="btn" id="btn1">LOGIN WITH OTP</button>
+            <button class="btn" id="btn2">LOGIN WITH PASSWORD</button>
+            <form action="#" class="frm" id="myForm">
+                <input type="text" name="" id="emailid" placeholder="Email Address *">
+                <span id="emailError" class="error"></span>
+                <p class="span1">Enter your email address e.g newman@gmail.com</p>
+                <input type="password" name="" id="password" placeholder="Password*">
+                <span id="passwordError" class="error"></span>
+                <div class="span2">
+                    <span>Don’t have an Account?</span><a href="register.html">Create Account</a>
+                    <a href="" class="fp">Forgot Password ?</a>
+                    <input type="submit" name="" id="submit" value="LOGIN">
+                    <img src="ZZ5H.gif" class="loder1" style="display: none;">
+                </div>
+            </form>
+            <form action="#" class="frm2">
+                <div class="flex-container em">
+                    <div class="number34">
+                        <div class="custom-dropdown" style="width:60px;">
+                            <div class="selected-item">
+                                <img src="p1.jpeg"  class="flag-icon" style="width: 15px;" alt="INDIA Flag">
+                              <span class="country-code">+91</span>
+                            </div>
+                            <ul class="dropdown-list">
+                              <li data-value="+91">
+                                <img src="p1.jpeg"  class="flag-icon" style="width: 15px;" alt="USA Flag">
+                                <span>+91</span>
+                              </li>
+                              <li data-value="+12">
+                                <img src="p2.jpeg"  class="flag-icon" style="width: 15px;"  alt="Canada Flag">
+                                <span>+12</span>
+                              </li>
+                              <li data-value="+32">
+                                <img src="p3.jpeg"  class="flag-icon" style="width: 15px;"  alt="UK Flag">
+                                <span>+32</span>
+                              </li>
+                              </li>
+                            </ul>
+                          </div>  
+                          <input type="text" class="phonetext" id="phone">
+                    </div>
+                </div>
+                <span id="phoneerror" class="error"></span>
+                <br><br>
+                <input type="submit" class="sendotp" id="btn3" value="SEND OTP">
+                <img src="ZZ5H.gif" class="loder1" style="display: none;">
+                <input type="password" class="Verify" id="otptext" placeholder="Enter Otp">
+                <span id="otperror" class="error"></span>
+                <button class="Verify" id="btn4">Verify OTP</button>
+                <img src="ZZ5H.gif" class="loder2" style="display: none;">
+            </form>
+        </div>
+        <div class="sec2">
+            <h2>NEW CUSTOMERS</h2>
+            <p>Creating an account has many benefits: check out faster, keep more than one address, track orders and
+                more.</p>
+            <input type="submit" class="createbtn" value="CREATE AN ACCOUNT"></input>
+        </div>
+    </div>
+</body>
+<script src="jquery.js"></script>
+</html>

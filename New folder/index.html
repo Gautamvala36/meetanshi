@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="sub-container">
+            <div class="login-container">
+                <p class="error-main"></p>
+                <h2 class="login-heading">LOGIN</h2>
+                <div class="btn-otp-pass">
+                    <button class="log otp">LOGIN WITH OTP</button>
+                    <button class="log pass btn-active">LOGIN WITH PASSWORD</button>
+                </div>
+                <form class="login-form">
+                    <input type="email" name="email" id="email" autocomplete="off" placeholder="Email Address *">
+                    <p id="email-err"></p>
+                    <label for="email" class="hint email">Enter your email address e.g newman@gmail.com</label>
+                    <div class="password-container">
+                        <input type="password" name="pass" id="password" placeholder="Password">
+                        <i class="fa-solid fa-eye-low-vision"></i>
+                        <p id="password-err"></p>
+                    </div>
+
+                    <span class="link-register">Don’t have an Account?</span>
+                    <a href="index2.html" class="link-s link-ca">Create Account</a>
+                    <a href="" class="link-s link-fgp">Forgot Password?</a>
+                    <div class="btn-login-wrapper">
+                        <button class="login-btn" type="submit" id="login2">Login</button>
+                        <img src="ZKZg.gif" alt="loader" class="loader">
+                    </div>
+                </form>
+                <form class="otp-form">
+                    <div class="imp">
+                        <div class="flag-container">
+                            <div class="custom-dropdown" style="width:60px;">
+                                <div class="selected-item">
+                                    <img src="flags/india.png" class="flag-icon" style="width: 15px;" alt="INDIA Flag">
+                                    <span class="country-code">+91</span>
+                                </div>
+                                <ul class="dropdown-list">
+                                    <li data-value="+91">
+                                        <img src="flags/united-states.png" class="flag-icon" style="width: 15px;" alt="USA Flag">
+                                        <span>+91</span>
+                                    </li>
+                                    <li data-value="+12">
+                                        <img src="flags/canada.png" class="flag-icon" style="width: 15px;" alt="Canada Flag">
+                                        <span>+12</span>
+                                    </li>
+                                    <li data-value="+32">
+                                        <img src="flags/united-kingdom.png" class="flag-icon" style="width: 15px;" alt="UK Flag">
+                                        <span>+32</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <input id="phone" type="tel" placeholder="Mobile Number*" name="phone">
+                        <p id="otpnum-err2"></p>
+                    </div>
+                    <label for="phone" class="hint2 mob">Mobile No. Without Country Code i.e 0244902545</label>
+
+                    <div class="btn-login-wrapper">
+                        <button class="login-btn5" id="btnverify1">SEND OTP</button>
+                        <img src="ZKZg.gif" alt="loader" class="loader45" id="lod">
+                        <div class="otpVarify">
+                            <input class="inputotp" id="otpver" type="text" name="" id="">
+                            <p id="opt-error"></p>
+                            <button class="otpverifybtn" id="optjs">verify otp</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="register-link">
+            <div class="sub-register">
+                <h2 class="new-customers-heading">NEW CUSTOMERS</h2>
+                <p class="par-register">Creating an account has many benefits: check out faster, keep more than one
+                    address, track orders and more.</p>
+                <button class="register-new-customer">CREATE AN ACCOUNT</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
+<script src="emailval.js"></script>
+<script src="script.js"></script>
+<script src="otpsubmit1.js"></script>
+
+</html>

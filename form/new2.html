@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 20%;
+
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            position: relative;
+            text-align: center;
+        }
+
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        #submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #0c23af;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #2841a0;
+        }
+
+        p {
+            position: relative;
+
+            color: red;
+            padding-bottom: 20px;
+        }
+
+        #eye {
+            height: 20px;
+            position: absolute;
+            top: 510px;
+            left: 1400px;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-bottom: 16px solid blue;
+            position: absolute;
+            left: 1200px;
+            top: 450px;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader" id="loader" style="display: none"></div>
+
+
+    <div id="error" style="width:80%;background-color: #f5ffbf;border-radius: 20px;margin: 2% auto;display: none; ">
+        <h5 style="text-align: center;padding: 10px; font-size: 28px">this email already Registration place <span
+                style="color: red" id="Registration">login</span> </h5>
+
+    </div>
+    <div class="maincontianer">
+        <div class="container" id="container">
+            <h2>Registration</h2>
+
+            <form action="#">
+                <input type="text" id="firstname" placeholder="First Name">
+                <p id="firstname_error"></p>
+                <input type="text" name="lastname" id="lastname" placeholder="Last Name">
+                <p id="lastname_error"></p>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <p id="email_error"></p>
+                <input type="password" name="password" id="password" placeholder="Password"><img src="image/hidden.png"
+                    id="eye">
+                <p id="password_error"></p>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password">
+                <p id="confirm_password_error"></p>
+
+                <button id="submit" onclick="return myFunction()">Register</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("submit").onclick = function () {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var email_error = document.getElementById("email_error");
+            var password_error = document.getElementById("password_error");
+            var password_vlidtion = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[#$@!%&?])[A-Za-z\d#$@!%&?]{8,30}$/;
+            var email_vlidtion = /^(([^<>()[\]\.,;:@\"]+(\.[^<>()[\]\.,;:@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:@\"]+\.)+[^<>()[\]\.,;:@\"]{2,})$/i;
+
+            if (email == "") {
+                email_error.innerHTML = "email can not be blank ";
+            }
+            else if (email.match(/^\s*$/)) {
+                email_error.innerHTML = "space can not allow";
+            }
+            else if (!email.match(email_vlidtion)) {
+                email_error.innerHTML = email + " * " + "email is not valid ";
+            }
+            else {
+                email_error.innerHTML = "";
+
+            }
+
+            // password validtion
+
+            if (password == "") {
+                password_error.innerHTML = "password can not be blank ";
+            }
+            else if (password.match(/^\s*$/)) {
+                password_error.innerHTML = "space can not allow";
+            }
+            else if (!password.match(password_vlidtion)) {
+                password_error.innerHTML = "Minimum eight characters, at least one letter, one number and one special characte";
+            }
+            else {
+                password_error.innerHTML = "";
+            }
+
+
+            if (email_error.innerHTML == "" && password_error.innerHTML == "") {
+                if ((username == "gautam@gmail.com" && password == "Gg@12345") || (username == "jay@gmail.com" && password == "Jj@12345") || (username == "meet@gmail.com" && password == "Mm@12345") || (username == "ani@gmail.com" && password == "Aa@12345") || (username == "anil@gmail.com" && password == "Aa@123456")) {
+                    document.getElementById('submit').addEventListener('click', function () {
+                        document.getElementById('container').style.display = 'none';
+                        document.getElementById('loader').style.display = 'block';
+
+                        setTimeout(function () {
+                            window.location.href = 'login_success.html';
+                        }, 10000); // 10 seconds
+                    });
+
+                }
+                else {
+                    document.getElementById('submit').addEventListener('click', function () {
+
+                        document.getElementById('container').style.display = 'none';
+                        document.getElementById('loader').style.display = 'block';
+
+                        setTimeout(function () {
+                            window.location.href = 'login_error.html';
+                        }, 5000);
+                    })
+                }
+
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 20%;
+
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            position: relative;
+            text-align: center;
+        }
+
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        #submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #0c23af;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .container input[type="submit"]:hover {
+            background-color: #2841a0;
+        }
+
+        p {
+            position: relative;
+            color: red;
+            padding-bottom: 20px;
+        }
+
+        #eye {
+            height: 20px;
+            position: absolute;
+            top: 510px;
+            left: 1400px;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-bottom: 16px solid blue;
+            position: absolute;
+            left: 1200px;
+            top: 450px;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="loader" id="loader" style="display: none"></div>
+
+
+<div id="error" style="width:80%;background-color: rgba(129,255,245,0.43);border-radius: 20px;margin: 2% auto;display: none; ">
+        <h5 style="text-align: center;padding: 10px; font-size: 28px">this email already Registration place   <span style="color: blue"  id="Registration">login</span> </h5>
+
+</div>
+<div class="maincontianer">
+    <div class="container" id="container">
+        <h2>Registration</h2>
+
+        <form action="#" >
+            <input type="text"  id="firstname" placeholder="First Name">
+            <p id="firstname_error"></p>
+            <input type="text" name="lastname" id="lastname" placeholder="Last Name">
+            <p id="lastname_error"></p>
+            <input type="email" name="email" id="email" placeholder="Email">
+            <p id="email_error"></p>
+            <input type="password" name="password" id="password" placeholder="Password"><img src="image/hidden.png"
+                                                                                             id="eye">
+            <p id="password_error"></p>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password">
+            <p id="confirm_password_error"></p>
+
+            <button id="submit" onclick="return myFunction()">Register</button>
+        </form>
+    </div>
+</div>
+<script >
+    
+</script>
+</body>
+</html>

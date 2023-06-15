@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Assistant";
+}
+
+.container {
+    display: flex;
+    margin-top: 10%;
+}
+
+.loginsec {
+    width: 340px;
+    /* border: 1px solid black; */
+    margin-left: 22%;
+    border-right: 1px solid #ccc;
+    padding-right: 38px;
+}
+
+.login {
+    font-size: 30px;
+    color: #000;
+    width: 100%;
+    height: 75px;
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+button#btn1,
+#btn2 {
+    width: 49%;
+    outline: none;
+    border: none;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #fdfcc3;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: #000;
+}
+
+button#btn1:hover {
+    background-color: #AB8049;
+    color: white;
+    cursor: pointer;
+}
+
+#btn2 {
+    color: white;
+    background-color: #AB8049;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+form {
+    margin-top: 45px;
+}
+
+form>input {
+    width: 100%;
+    height: 35px;
+    font-style: italic;
+    display: block;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #000;
+    padding: 0;
+}
+
+.span1 {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 10px 0;
+    font-family: 'Assistant', sans-serif;
+    margin-bottom: 23px;
+}
+
+.span2 {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 28px 0;
+    font-family: 'Assistant', sans-serif;
+}
+
+.fp {
+    margin-left: 30px;
+}
+
+a {
+    color: #219af6;
+}
+
+#submit {
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    margin-top: 35px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    background-color: #AB8049;
+    font-weight: 700;
+}
+
+#submit:hover {
+    cursor: pointer;
+}
+
+.sec2>h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.sec2>p {
+    margin-right: 40px;
+    margin-bottom: 35px;
+    font-size: 1rem;
+}
+
+.sec2 {
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+}
+
+.createbtn {
+    width: 94%;
+    height: 37px;
+    font-weight: 700;
+    color: white;
+    background-color: #AB8049;
+    border: none;
+}
+
+.createbtn:hover {
+    cursor: pointer;
+    background-color: #000;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.otp-content {
+    margin-top: 15px !important;
+}
+
+.intl-tel-input {
+    position: relative;
+    display: block;
+}
+
+.intl-tel-input.allow-dropdown .flag-container,
+.intl-tel-input.separate-dial-code .flag-container {
+    right: auto;
+    left: 0;
+}
+
+.intl-tel-input .flag-container {
+    top: 25%;
+}
+
+.intl-tel-input .flag-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1px;
+}
+
+.intl-tel-input * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.intl-tel-input.separate-dial-code.allow-dropdown.iti-sdc-3 .selected-flag {
+    width: 78px;
+}
+
+.intl-tel-input.separate-dial-code.iti-sdc-3 .selected-flag {
+    width: 68px;
+}
+
+.intl-tel-input.separate-dial-code .selected-flag {
+    background: transparent;
+}
+
+.intl-tel-input.separate-dial-code .selected-flag {
+    background-color: rgba(0, 0, 0, .05);
+    display: table;
+}
+
+.intl-tel-input.allow-dropdown .selected-flag,
+.intl-tel-input.separate-dial-code .selected-flag {
+    width: 46px;
+}
+
+.intl-tel-input .selected-flag {
+    z-index: 1;
+    position: relative;
+    width: 36px;
+    height: 100%;
+    padding: 0 0 0 8px;
+}
+
+.intl-tel-input * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.intl-tel-input .selected-flag .iti-flag {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.iti-flag.af {
+    height: 14px;
+    background-position: -66px 0;
+}
+
+.iti-flag {
+    width: 20px;
+    height: 15px;
+    box-shadow: 0 0 1px 0 #888;
+    background-image: url(../img/flags.png);
+    background-repeat: no-repeat;
+    background-color: #dbdbdb;
+    background-position: 20px 0;
+}
+
+.intl-tel-input.separate-dial-code .selected-dial-code {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 28px;
+}
+
+.intl-tel-input.separate-dial-code .selected-dial-code {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 28px;
+}
+
+.intl-tel-input .selected-flag .iti-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    right: 6px;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid #555;
+}
+
+.intl-tel-input .country-list {
+    position: absolute;
+    z-index: 2;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 0 -1px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.intl-tel-input .country-list {
+    z-index: 9999 !important;
+}
+
+.intl-tel-input .hide {
+    display: none;
+}
+
+.login-container ul {
+    margin-left: 4px;
+    font-size: small;
+    line-height: 1.4;
+    list-style-type: disc;
+}
+
+.intl-tel-input * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.intl-tel-input .country-list .country.highlight {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.intl-tel-input .country-list .country {
+    padding: 5px 10px;
+}
+
+.login-container li {
+    padding-bottom: 5px;
+    margin-left: 5px;
+}
+
+.intl-tel-input * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.intl-tel-input .country-list .flag-box,
+.intl-tel-input .country-list .country-name {
+    margin-right: 6px;
+}
+
+.intl-tel-input .country-list .flag-box,
+.intl-tel-input .country-list .country-name,
+.intl-tel-input .country-list .dial-code {
+    vertical-align: middle;
+}
+
+.intl-tel-input .country-list .flag-box {
+    display: inline-block;
+    width: 20px;
+}
+
+.intl-tel-input .country-list .flag-box,
+.intl-tel-input .country-list .country-name {
+    margin-right: 6px;
+}
+
+.intl-tel-input .country-list .flag-box,
+.intl-tel-input .country-list .country-name,
+.intl-tel-input .country-list .dial-code {
+    vertical-align: middle;
+}
+
+.intl-tel-input .country-list .country .dial-code {
+    color: #999;
+}
+
+.intl-tel-input .country-list .flag-box,
+.intl-tel-input .country-list .country-name,
+.intl-tel-input .country-list .dial-code {
+    vertical-align: middle;
+}
+
+.intl-tel-input .country-list .country {
+    padding: 5px 10px;
+}
+
+.iti-flag.us {
+    height: 11px;
+    background-position: -5263px 0;
+}
+
+
+.iti-flag {
+    width: 20px;
+    height: 15px;
+    box-shadow: 0 0 1px 0 #888;
+    background-image: url(../img/flags.png);
+    background-repeat: no-repeat;
+    background-color: #dbdbdb;
+    background-position: 20px 0;
+}
+
+.iti-flag {
+    width: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.dropdown-btn span {
+    margin-right: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#country-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#country-list li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#country-list li:hover {
+    background-color: #e6e6e6;
+}
+.frm2{
+    display: none;
+}
+#btn3 {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #ab8049;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    color: white;
+}
+
+
+#btn4{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #ab8049;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    color: white;
+}
+.loder1{
+    /* display: none; */
+    height: 42px;
+    position: absolute;
+    left: 33%;
+    /* bottom: -39%; */
+}
+img.loder2 {
+    height: 42px;
+    position: absolute;
+    left: 32%;
+    /* bottom: -90%; */
+}
+.error {
+    color: red;
+  }
+  /* flag-Countrt */
+  .custom-dropdown {
+    position: relative;
+    width: 30px;
+    background-color: #f2f2f2;
+  }
+  
+  .selected-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc; 
+  }
+  
+  .flag-icon {
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    z-index: 999;
+  }
+  
+  .dropdown-list li {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .dropdown-list li img {
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .dropdown-list li:hover {
+    background-color: #f5f5f5;
+  }
+  input.phonetext {
+    position: absolute;
+    top: 49.2%;
+    width: 16%;
+    left: 27.1%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.number34 {
+    border-bottom: 2px solid black;
+}

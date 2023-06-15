@@ -1,0 +1,39 @@
+.container{
+    width: 1150px;
+    margin: 0 auto;
+
+}
+
+.headar{
+    font-size: 24px;
+    justify-content: center;
+    display: flex;
+}
+
+#add_row{
+    font-size: 18px;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+
+#delet_row {
+    padding: 10px;
+    color: white;
+    margin: 0 auto;
+    background-color: black ;
+    border-radius: 10px;
+  }
+
+#error {
+    font-size: 20px;
+    color: red;
+    position: absolute;
+    left: 320px;
+    top: 70px;
+  }
+

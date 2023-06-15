@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="loader" id="loader" style="display: none;"></div>
+
+    <div class="html-form" id="container">
+        <h3>Login </h3>
+        <form action="#" method="" id="form">
+            <input type="email" id="email" placeholder="Email">
+            <p id="emailWarning"></p>
+            <input type="password" id="password" placeholder="Password">
+            <p id="passwordWarning"></p>
+            <div class="checkbox">
+                <label for="showPassword">Show Password</label>
+                <input type="checkbox" id="showPassword">
+            </div>
+            <button type="submit" id="validate" o>Login</button>
+        </form>
+    </div>
+
+
+    <script>
+        document.getElementById("validate").addEventListener("click", function (event) {
+           
+            console.log("submit to login");
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var emailWarning = document.getElementById('emailWarning');
+            var passwordWarning = document.getElementById('passwordWarning');
+
+            // .........Email validation..........//
+            if (email == "") {
+                emailWarning.textContent = "Email is Required....";
+            }
+            else if (!isValidEmail(email)) {
+                emailWarning.textContent = "Email is not valid format";
+            }
+            else {
+                emailWarning.textContent = "";
+            }
+            // Validate password //
+            if (password == "") {
+                passwordWarning.textContent = "Password is required";
+            }
+            else if (password.length < 6 || password.length > 8) {
+                passwordWarning.textContent = "Password must be between 6 and 8 characters long";
+            }
+            else if (!/[a-z]/.test(password)) {
+                passwordWarning.textContent = "Password must contain at least one lowercase letter";
+            }
+            else if (!/[A-Z]/.test(password)) {
+                passwordWarning.textContent = "Password must contain at least one uppercase letter";
+            }
+            else if (!/\d/.test(password)) {
+                passwordWarning.textContent = "Password must contain at least one number";
+            }
+            else {
+                passwordWarning.textContent = "";
+            }
+
+            function isValidEmail(email) {
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            return false;
+
+        });
+
+        document.getElementById("form").addEventListener("submit", auth);
+
+        function auth(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var username = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            console.log(username);
+
+
+
+            if ((username == "gautam@gmail.com" && password == "Gg@12345") || (username == "jay@gmail.com" && password == "Jj@12345") || (username == "meet@gmail.com" && password == "Mm@12345") || (username == "ani@gmail.com" && password == "Aa@12345") || (username == "anil@gmail.com" && password == "Aa@123456")) {
+                document.getElementById('validate').addEventListener('click', function () {
+                    document.getElementById('container').style.display = 'none';
+                    document.getElementById('loader').style.display = 'block';
+
+                    setTimeout(function () {
+                        window.location.replace("file:///C:/wamp64/www/meetanshi/form/submit.html/");
+
+                    }, 10000); // 10 seconds
+                });
+
+            }
+            else {
+                document.getElementById('validate').addEventListener('click', function () {
+
+                    document.getElementById('container').style.display = 'none';
+                    document.getElementById('loader').style.display = 'block';
+
+                    setTimeout(function () {
+                        window.location.replace("file:///C:/wamp64/www/meetanshi/form/index.html/");
+                    }, 10000);
+                });
+            }
+
+        }
+
+
+
+
+        const showPasswordCheckbox = document.getElementById('showPassword');
+        const passwordInput = document.getElementById('password');
+
+        showPasswordCheckbox.addEventListener('change', function () {
+            const isChecked = this.checked;
+            passwordInput.type = isChecked ? 'text' : 'password';
+        });
+
+        window.onload = function () {
+            var email = localStorage.getItem(email);
+            var password = localStorage.getItem(password);
+            if (email !== null) $('#email').val(email); if (password !== null) $('#password').val(password);
+
+        }
+
+    </script>
+</body>
+
+</html>

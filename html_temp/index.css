@@ -1,0 +1,1548 @@
+
+/*start table*/
+
+.table{
+    width: 100%;
+    margin: 0 auto;
+    
+    border-collapse: collapse;
+}
+
+.dollar {
+    vertical-align: super;
+    font-size: initial;
+}
+
+.tr:nth-child(even) {
+    width: 1168px;
+    height: 43px;
+    background-color:#f4f9fa;
+}
+
+#lastname {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: #ebf9fd63;
+}
+
+#lastname1 {
+    background-color: #ebf9fd63;
+}
+
+.borderline:not(:last-child) {
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.th > span {
+    width: 85%;
+    font-size: 16px;
+    line-height: 24px;
+    color: #23273f;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    display: flex;
+    background-color: #b7cece;
+    border-radius: 16px;
+    padding: 7px 5px;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+
+.logo > span {
+    width: 85%;
+    display: flex;
+    background-color: #e06a26;
+    border-radius: 16px;
+    padding: 9px 6px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.logo {
+    width: 124px;
+    height: 32px;
+}
+
+.th {
+    width: 124px;
+    height: 32px;
+
+}
+
+tr:last-child {
+    border-bottom: 1px solid #c7c7c7;;
+}
+
+/*end table*/
+
+/* responsive */
+
+/* ##Device = Desktops ##Screen = 1281px to higher resolution desktop */
+@media (min-width: 1281px) {
+    /* code in this block will be applied only if device width>1281 */
+    .container {
+        width: 1150px;
+        margin: 0 auto;
+        /*margin: 0px;*/
+        padding: 0px;
+        overflow-x: hidden;
+        font-family: "Open Sans";
+    }
+
+    /* start div1 and div2*/
+    .div1
+    {
+        text-align: justify;
+        font-size: 16px;
+        line-height: 24px;
+        height: 250px;
+    }
+
+    .div2{
+        text-align: justify;
+        font-size: 16px;
+        line-height: 24px;
+        height: 220px;
+    }
+    /*end div1*/
+
+    /*start icon*/
+
+    .icon {
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        
+    }
+
+    .p_1,
+    .p_2,.p_3
+    ,.p_4{
+        font-family: "Open Sans";
+        text-align: center;
+        font-weight: 400;
+        color: #396a80;
+        font-size: 16px;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .icon1 {
+        height: 50px;
+    }
+
+    /*end icon*/
+
+    /*start div2*/
+    .div2 {
+        font-size: 16px;
+        font-family: "Open Sans";
+        margin: 0 auto;
+        width: 100%;
+    }
+    /*end div2*/
+
+    /*start table*/
+
+    .header > span {
+        border: 0px solid;
+        border-collapse: collapse;
+
+    }
+
+    .table{
+        width: 100%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    .logo1 {
+        width: 124px;
+        height: 32px;
+        border-radius: 16px;
+        background-color: #b7cece;
+    }
+
+    .dollar {
+        vertical-align: super;
+        font-size: initial;
+    }
+
+    .name {
+        width: 265px;
+        height: 16px;
+        font-size: 18px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: Open Sans;
+        text-align: left;
+    }
+
+    .price {
+        width: 30px;
+        height: 16px;
+        font-size: 26px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: Open Sans;
+        text-align: center;
+    }
+
+    i {
+        color: #e06a26;
+    }
+
+    .tr:nth-child(even) {
+        width: 1168px;
+        height: 43px;
+        background-color:#f4f9fa;
+    }
+
+    #lastname {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        background-color: #ebf9fd63;
+    }
+
+    #lastname1 {
+        background-color: #ebf9fd63;
+    }
+
+    .borderline:not(:last-child) {
+        border-bottom: 1px solid #c7c7c7;
+    }
+
+    .th > span {
+        width: 85%;
+        font-size: 16px;
+        line-height: 24px;
+        color: #23273f;
+        font-weight: 600;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        display: flex;
+        background-color: #b7cece;
+        border-radius: 16px;
+        padding: 7px 5px;
+        margin: 0 auto;
+        justify-content: center;
+
+    }
+
+    .logo > span {
+        width: 85%;
+        display: flex;
+        background-color: #e06a26;
+        border-radius: 16px;
+        padding: 9px 6px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 124px;
+        height: 32px;
+    }
+
+    .th {
+        width: 124px;
+        height: 32px;
+
+    }
+
+    tr:last-child {
+        border-bottom: 1px solid #c7c7c7;;
+    }
+
+    .td {
+        width: 356px;
+        height: 16px;
+        font-size: 16px;
+        letter-spacing: 0px;
+        line-height: 24px;
+        color: #434a56;
+        font-weight: 400;
+        font-family: "Open Sans";
+    }
+
+    /*end table*/
+
+    /*start div3*/
+    .div3 {
+        margin: 0 auto;
+        color: #23273f;
+        font-weight: 700;
+        width: 1170px;
+        height: 600px;
+        font-size: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    /*end div3*/
+
+    /*start box*/
+
+    .box-responsive {
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .boxcolor {
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 2px;
+        border-radius: 43px;
+        background-color: #f2f2f2;
+    }
+
+    .boxp {
+        padding-top: 20px;
+        font-size: 24px;
+        letter-spacing: 1px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans";
+        height: 110px;
+    }
+
+    .icon_box {
+        display: flex;
+    }
+
+    .icon_b {
+    width: 100%;
+    margin: 0 auto;
+    }
+
+    .p2 {
+        width: 200px;
+        /*height: 50px;*/
+        font-size: 18px;
+        letter-spacing: 0px;
+        line-height: 24px;
+        color: #434a56;
+        font-weight: 700;
+        font-family: "Open Sans";
+        text-align: center;
+    }
+
+
+    .p3,
+    .p4,
+    .p5 {
+        color: #396a80;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        line-height: 24px;
+        width: 270px;
+
+    }
+
+    .p4,
+    .p5 {
+        width: 320px;
+    }
+
+    ul>li::before{
+        content: url('image/than.png');
+        padding-inline: 5px;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    ul>li{
+        margin: 0 auto;
+        /*width: 1050px;*/
+        width: 95%;
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #101010;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        display: inline-flex;
+    }
+
+    /*end box*/
+
+    /*start  div4*/
+
+    .div4 {
+        display: flex;
+        width: 1000px;
+        margin: auto;
+        padding-top: 15px;
+    }
+
+    .text{
+        width: 740px;
+        margin: 0 auto;
+    }
+
+    div > .div4p {
+        width: 800px;
+        height: 85px;
+        font-size: 26px;
+        letter-spacing: 1px;
+        color: #396a80;
+        font-weight: 700;
+        font-family: "Open Sans";
+    }
+
+    div > .button {
+        margin: 0 auto;
+        color: white;
+        border: none;
+        width: 119px;
+        height: 15px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #ffffff;
+        font-weight: 800;
+        font-family: "Open Sans";
+    }
+
+    #button {
+        width: 160px;
+        height: 45px;
+        border-radius: 25px;
+        background-color: #f7944b;
+    }
+    /*end div4*/
+
+}
+
+/* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+    /* code in this block will be applied only if device width>1025 and <1280 */
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0px;
+        overflow-x: hidden;
+        font-family: "Open Sans";
+
+    }
+
+    /*start div1*/
+    .div1 {
+        font-size: 16px;
+        font-family: "Open Sans";
+        
+        margin: 0 auto;
+    }
+
+    /*end div1*/
+
+    /*start icon*/
+
+    .icon {
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .p_1,
+    .p_2,.p_3
+    ,.p_4{
+        font-family: "Open Sans";
+        text-align: center;
+        font-weight: 400;
+        color: #396a80;
+        font-size: 16px;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .icon1 {
+        height: 50px;
+    }
+
+    /*end icon*/
+
+    /*start div2*/
+
+    .div2 {
+        font-size: 16px;
+        font-family: "Open Sans";
+        
+        margin: 0 auto;
+    }
+
+    /*end div2*/
+
+    /*start table*/
+
+    .table{
+        width: 100%;
+        margin: 0 auto;
+        
+    }
+
+
+    .logo > span {
+        display: flex;
+        background-color: #e06a26;
+        border-radius: 26px;
+        padding: 13px 5px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .th > span {
+        width: 95%;
+        border-radius: 26px;
+        padding: 10px 2px;
+    }
+
+    .name {
+        width: 265px;
+        height: 16px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: left;
+    }
+
+    .price {
+        width: 38px;
+        height: 16px;
+        font-size: 26px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+    }
+
+    .td {
+        width: 100%;
+        
+        font-size: 14px;
+        letter-spacing: 0px;
+        line-height: 35px;
+        color: #434a56;
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /*end table*/
+
+    /*start div3*/
+
+    .div3 {
+        width: 100%;
+        margin: 0 auto;
+        
+        color: #23273f;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .div3 > img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /*end div3*/
+
+    /*start box*/
+
+    .box-responsive {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    .boxcolor {
+        width: 100%;
+        border-radius: 43px;
+        background-color: #f2f2f2;
+        margin: 0 auto;
+        padding-bottom: 2px;
+    }
+
+    .boxp {
+        font-size: 24px;
+        letter-spacing: 0px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        width: 100%;
+        
+        margin: 0 auto;
+        padding-top: 2px;
+    }
+
+    .icon_box {
+        display: flex;
+    }
+
+    .icon_b {
+        width: 100%;
+        margin: 0 auto;
+        
+    }
+
+    .p2 {
+        width: 200px;
+        height: 50px;
+        font-size: 18px;
+        letter-spacing: 0px;
+        line-height: 24px;
+        color: #434a56;
+        font-weight: 700;
+        font-family: "Open Sans";
+        text-align: center;
+    }
+
+    .p3,
+    .p4,
+    .p5 {
+        height: 91px;
+        color: #396a80;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        line-height: 24px;
+        width: 320px;
+
+    }
+
+    .p4,
+    .p5 {
+        width: 320px;
+    }
+
+    ul>li::before{
+        content: url('image/than.png');
+        padding-inline: 5px;
+    }
+
+    ul{
+        list-style: none;
+        width: 100%;
+        
+        padding-left: 15px;
+    }
+
+    ul>li{
+        margin: 0 auto;
+        width: 95%;
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #101010;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: justify;
+        display: inline-flex;
+        
+    }
+
+    /* end box*/
+
+    /*start div4*/
+
+    .div4 {
+        display: flex;
+        width: 1000px;
+        margin: auto;
+        padding-top: 15px;
+    }
+
+    .text{
+        width: 740px;
+        margin: 0 auto;
+    }
+    div > .div4p {
+        width: 800px;
+        height: 85px;
+        font-size: 26px;
+        letter-spacing: 1px;
+        color: #396a80;
+        font-weight: 700;
+        font-family: "Open Sans";
+    }
+
+    div > .button {
+        margin: 0 auto;
+        color: white;
+        border: none;
+        width: 119px;
+        height: 15px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #ffffff;
+        font-weight: 800;
+        font-family: "Open Sans";
+    }
+
+    #button {
+        width: 160px;
+        height: 45px;
+        border-radius: 25px;
+        background-color: #f7944b;
+    }
+    /*end div4*/
+}
+
+/* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* code in this block will be applied only if device width>768 and <1024 */
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0px;
+        overflow-x: hidden;
+        font-family: "Open Sans";
+    }
+
+    /*start div1*/
+
+    .div1 {
+        font-size: 16px;
+        font-family: "Open Sans";
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /*end div1*/
+
+    /*start icon*/
+
+    #icon > div {
+        display: inline-table;
+        width: 49%;
+        margin: 0 auto;
+    }
+
+    .icon1 {
+        height: 50px;
+    }
+
+    .p_1,
+    .p_2,.p_3
+    ,.p_4{
+        font-family: "Open Sans";
+        text-align: center;
+        font-weight: 400;
+        color: #396a80;
+        font-size: 16px;
+        width: 300px;
+        margin: 0 auto;
+    }
+    /*end icon*/
+
+    /*start div2*/
+
+    .div2 {
+        font-size: 16px;
+        font-family: "Open Sans";
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /*end div2*/
+
+    /*start table*/
+
+    .table{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+    .logo > span {
+        display: flex;
+        background-color: #e06a26;
+        border-radius: 26px;
+        padding: 13px 5px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .th > span {
+        width: 95%;
+        border-radius: 26px;
+        padding: 10px 2px;
+    }
+
+    .name {
+        width: 265px;
+        font-size: 18px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: left;
+    }
+
+    .price {
+        width: 38px;
+        font-size: 26px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+    }
+
+    .td {
+        width: 100%;
+        font-size: 14px;
+        letter-spacing: 0px;
+        line-height: 35px;
+        color: #434a56;
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    /*end table*/
+
+    /*start div3*/
+
+    .div3 {
+        width: 100%;
+        margin: 0 auto;
+        color: #23273f;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .div3 > img {
+        width: 80%;
+        margin: 0 auto;
+
+    }
+
+    /*end div3*/
+
+    /*start box*/
+
+    .box-responsive {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    .boxcolor {
+        width: 100%;
+        border-radius: 43px;
+        background-color: #f2f2f2;
+        margin: 0 auto;
+        padding-bottom: 2px;
+    }
+
+    .boxp {
+        font-size: 22px;
+        letter-spacing: 0px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        padding-top: 2px;
+    }
+
+    .icon_box {
+        margin: 0 auto;
+        width: 100%;
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .icon_b {
+        /*width: 100%;*/
+        
+        margin: 0 auto;
+    }
+
+    .p2 {
+        width: 200px;
+        font-size: 18px;
+        letter-spacing: 0px;
+        color: #434a56;
+        font-weight: 700;
+        font-family: "Open Sans";
+        text-align: center;
+    }
+
+    .p3{
+        color: #396a80;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        width: 240px;
+        margin: 0 auto;
+    }
+
+    .p4,
+    .p5 {
+        color: #396a80;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        width: 240px;
+        margin: 0 auto;
+    }
+
+    ul>li::before{
+        content: url('image/than.png');
+        padding-inline: 5px;
+    }
+
+    ul{
+        list-style: none;
+        width: 100%;
+        padding-left: 5px;
+    }
+
+    ul>li{
+        margin: 0 auto;
+        width: 98%;
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #101010;
+        font-weight: 400;
+        text-align: justify;
+        display: inline-flex;
+    }
+
+    /*end box*/
+
+    /*start div4*/
+
+    .div4 {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .text{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .img {
+        margin: 0 auto;
+        padding-top: 15px;
+    }
+
+    div > .div4p {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 26px;
+        letter-spacing: 1px;
+        color: #396a80;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        display: block;
+    }
+
+    div > .button {
+        margin: 0 auto;
+        border: none;
+        width: 119px;
+        height: 15px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #ffffff;
+        font-weight: 800;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .fb {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #button {
+        width: 160px;
+        height: 45px;
+        border-radius: 25px;
+        background-color: #f7944b;
+    }
+    /*end div4*/
+
+}
+
+/* ##Device = Low Resolution Tablets,  ##Screen = B/w 481px to 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+    /* code in this block will be applied only if device width>481 and <767 */
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0px;
+        overflow-x: hidden;
+        font-family: "Open Sans";
+
+    }
+
+    /*start div1*/
+
+    .div1 {
+        font-size: 14px;
+        font-family: "Open Sans";
+        text-align: justify;
+    }
+
+    /*end div1*/
+
+    /*start icon*/
+
+    .icon {
+        display: inline-flex;
+        margin: 0 auto;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .icon1 {
+        height: 50px;
+    }
+
+    .p_1,
+    .p_2,.p_3
+    ,.p_4{
+        font-family: "Open Sans";
+        text-align: center;
+        font-weight: 400;
+        color: #396a80;
+        font-size: 16px;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    /*end icon*/
+
+    /*start div2*/
+
+    .div2 {
+        font-size: 14px;
+        font-family: "Open Sans";
+        text-align: justify;
+    }
+
+    /*end div2*/
+
+    /*start table*/
+
+    .table{
+        width: 865px;
+        margin: 0 auto;
+    }
+
+
+    .logo > span {
+        display: flex;
+        background-color: #e06a26;
+        border-radius: 26px;
+        padding: 13px 2px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .th > span {
+        width: 95%;
+        border-radius: 26px;
+        padding: 10px 2px;
+    }
+
+    .name {
+        width: 265px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: left;
+    }
+
+    .price {
+        width: 38px;
+        font-size: 26px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+    }
+
+    .td {
+        width: 100%;
+        font-size: 14px;
+        letter-spacing: 0px;
+        line-height: 30px;
+        color: #434a56;
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /*end table*/
+
+    /*start div3*/
+
+    .div3 {
+        width: 100%;
+        margin: 0 auto;
+        color: #23273f;
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .div3 > img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /*end div3*/
+
+    /*start box*/
+
+    .box-responsive {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    .boxcolor {
+        width: 100%;
+        border-radius: 43px;
+        background-color: #f2f2f2;
+        margin: 0 auto;
+        padding-bottom: 2px;
+    }
+
+    .boxp {
+        font-size: 20px;
+        letter-spacing: 0px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        padding-top: 2px;
+    }
+
+    .icon_box {
+        margin: 0 auto;
+        width: 100%;
+        display: block;
+    }
+    .icon_b {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .p2 {
+        width: 200px;
+        font-size: 18px;
+        letter-spacing: 0px;
+        line-height: 24px;
+        color: #434a56;
+        font-weight: 700;
+        font-family: "Open Sans";
+        text-align: center;
+    }
+
+    .p3{
+        color: #396a80;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        line-height: 24px;
+        width: 260px;
+        margin: 0 auto;
+    }
+
+    .p4,
+    .p5 {
+        color: #396a80;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        line-height: 24px;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    ul>li::before{
+        content: url('image/than.png');
+        padding-inline: 5px;
+    }
+
+    ul{
+        list-style: none;
+        width: 100%;
+        padding-left: 5px;
+    }
+
+    ul>li{
+        margin: 0 auto;
+        width: 95%;
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #101010;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: justify;
+        display: inline-flex;
+    }
+
+    /*end box*/
+
+    /*start div4*/
+
+    .div4 {
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .text{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .img {
+        margin: 0 auto;
+        width: 100%;
+        padding-top: 15px;
+    }
+
+    div > .div4p {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 24px;
+        letter-spacing: 1px;
+        color: #396a80;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        display: block;
+    }
+
+    div > .button {
+        margin: 0 auto;
+        border: none;
+        width: 119px;
+        height: 15px;
+        font-size: 18px;
+        color: #ffffff;
+        font-weight: 800;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .fb {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #button {
+        width: 160px;
+        height: 45px;
+        border-radius: 25px;
+        background-color: #f7944b;
+    }
+
+    /*end div4*/
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+@media (min-width: 320px) and (max-width: 480px) {
+    /* code in this block will be applied only if device width>320 and <480 */
+    .container {
+        width: 90%;
+        /**/
+        margin: 0 auto;
+        padding: 0px;
+        overflow-x: hidden;
+        font-family: "Open Sans";
+
+    }
+
+    /*satrt div1*/
+
+    .div1 {
+        font-size: 14px;
+        font-family: "Open Sans";
+        text-align: justify;
+    }
+
+    /*end div1*/
+
+    /*start icon*/
+    .icon {
+        display: inline-block;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .icon1 {
+        height: 50px;
+    }
+    .p_1,
+    .p_2,.p_3
+    ,.p_4{
+        font-family: "Open Sans";
+        text-align: center;
+        font-weight: 400;
+        color: #396a80;
+        font-size: 16px;
+        line-height: 24px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /*end icon*/
+    .div2 {
+        font-size: 14px;
+        font-family: "Open Sans";
+        text-align: justify;
+    }
+
+    /*end div2*/
+
+    .table{
+        width: 770px;
+        margin: 0 auto;
+    }
+
+    .logo > span {
+        display: flex;
+        background-color: #e06a26;
+        border-radius: 26px;
+        padding: 13px 2px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .th > span {
+        width: 95%;
+        border-radius: 26px;
+        padding: 10px 2px;
+    }
+
+    .name {
+        width: 265px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: left;
+    }
+
+    .price {
+        width: 38px;
+        font-size: 26px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+    }
+
+    .td {
+        width: 100%;
+        font-size: 14px;
+        letter-spacing: 0px;
+        line-height: 24px;
+        color: #434a56;
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* start div3 */
+    .div3 {
+        width: 100%;
+        margin: 0 auto;
+        color: #23273f;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
+    .div3 > img {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* end div3*/
+
+    /*start box*/
+
+    .box-responsive {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    .boxcolor {
+        width: 100%;
+        border-radius: 43px;
+        background-color: #f2f2f2;
+        margin: 0 auto;
+        padding: 2px;
+    }
+
+    .boxp {
+        font-size: 20px;
+        letter-spacing: 0px;
+        color: #23273f;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .icon_box {
+        margin: 0 auto;
+        width: 100%;
+        display: block;
+    }
+    .icon_b {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .p2 {
+        width: 200px;
+        height: 50px;
+        font-size: 18px;
+        letter-spacing: 0px;
+        color: #434a56;
+        font-weight: 700;
+        font-family: "Open Sans";
+        text-align: center;
+    }
+
+    .p3,
+    .p4,
+    .p5 {
+        color: #396a80;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0px;
+        width: 90%;
+        margin: 0 auto;
+
+    }
+
+    .p4,
+    .p5 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    ul>li::before{
+        content: url('image/than.png');
+        padding-inline: 5px;
+    }
+
+    ul{
+        list-style: none;
+        width: 95%;
+        padding-left: 2px;
+    }
+
+    ul>li{
+        margin: 0 auto;
+        width: 95%;
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #101010;
+        font-weight: 400;
+        text-align: justify;
+        display: inline-flex;
+    }
+    /*end box*/
+
+    /*start contact*/
+
+    #button {
+        width: 150px;
+        height: 40px;
+        border-radius: 25px;
+        background-color: #f7944b;
+    }
+
+    .div4 {
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .text{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .img {
+        margin: 0 auto;
+        width: 100%;
+        padding-top: 15px;
+    }
+
+
+    div > .div4p {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 22px;
+        letter-spacing: 1px;
+        color: #396a80;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        display: block;
+    }
+
+    div > .button {
+        margin: 0 auto;
+        border: none;
+        width: 119px;
+        height: 15px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #ffffff;
+        font-weight: 800;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .fb {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    /*end contact*/
+ }

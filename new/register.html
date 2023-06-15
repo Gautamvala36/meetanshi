@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <!-- <link rel="stylesheet" href="css/intlTelInput.css"> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="html-form" id="html-form2">
+        <h3>CREATE NEW CUSTOMER ACCOUNT</h3>
+
+        <form id="registrationForm" action="#">
+            <div class="flex-container abbb">
+                <div>
+                    <input type="text" id="firstName" placeholder="First Name*">
+                    <p id="firstNameError" class="error"></p>
+                </div>  
+                <div>
+                    <input type="text" id="Lastname" placeholder="Last Name*">
+                    <p id="lastNameError" class="error" style="margin-left: 30px;"></p>
+                </div>
+            </div>
+            <div class="flex-container em">
+                <div>
+                    <input type="text" id="emailAddress" placeholder="Email Address*">
+                    <p id="emailError" class="error"></p>
+                </div>
+            </div>
+            <div class="pas1 em">
+                <div class="abps">
+                    <input type="password" id="password" placeholder="Password*">
+                    <p id="passwordError" class="error"></p>
+                </div>
+                <div class="check">
+                    <input id="checkc" type="checkbox" >show password
+                </div>
+            </div>
+            <div class="flex-container em">
+                <div class="number34">
+                    <div class="custom-dropdown" style="width:60px;">
+                        <div class="selected-item">
+                            <img src="p1.jpeg"  class="flag-icon" style="width: 15px;" alt="INDIA Flag">
+                          <span class="country-code">+91</span>
+                        </div>
+                        <ul class="dropdown-list">
+                          <li data-value="+91">
+                            <img src="p1.jpeg"  class="flag-icon" style="width: 15px;" alt="USA Flag">
+                            <span>+91</span>
+                          </li>
+                          <li data-value="+12">
+                            <img src="p2.jpeg"  class="flag-icon" style="width: 15px;"  alt="Canada Flag">
+                            <span>+12</span>
+                          </li>
+                          <li data-value="+32">
+                            <img src="p3.jpeg"  class="flag-icon" style="width: 15px;"  alt="UK Flag">
+                            <span>+32</span>
+                          </li>
+                        </ul>
+                      </div>  
+                      <input type="text" class="phonetext">
+                </div>
+                <div>
+                    <p>Mobile No. Without Country Code i.e For Ghana Ex: 0244902545</p>
+                </div> 
+            </div>
+            <div class="btn34">
+                <!-- <button id="btn1" class="btn" >SEND OTP</button> -->
+                <input type="submit" name="" class="btn" id="btn1" value="SEND OTP">
+                <img src="ZZ5H.gif" class="loder1" style="display: none;">
+            </div>
+            <p class="links3">Do you have an Account? <a class="login2" id="login2" href="login.html">login</a></p>
+            <input type="password" class="otpbox" id="otpbox1" placeholder="Insert Otp Here">
+            <p id="otperror" class="error"></p>
+            <button class="otpbox reg_btn">VERIFY & REGISTER</button>
+            <img src="ZZ5H.gif" class="loder2" style="display: none;">
+        </form>
+        <!-- <script src="js/intlTelInput.js"></script>
+        <script>
+            var input=document.querySelector('#phone');
+             window.intlTelInput(input,{});
+        </script> -->
+    </div>
+  
+
+</body>
+<script src="jquery2.js"></script>
+</html>

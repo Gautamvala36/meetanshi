@@ -1,0 +1,174 @@
+.flex-container {
+    display: flex;
+}
+
+.flex-container>div {
+    width: 46%;
+    margin: 0px auto;
+
+}
+
+.html-form {
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 10px;
+    border: 1px solid #015ba9;
+}
+
+#validate {
+    border: none;
+    background: #015ba9;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 60%;
+    height: 20px;
+    background: white;
+    border: 1px solid lightgray;
+    padding: 5px;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+}
+
+.html-form h3 {
+    text-align: center;
+    font-size: 25px;
+    margin: 0px;
+    margin-bottom: 5px;
+    color: #015ba9;
+    border-bottom: 1px solid;
+    margin-bottom: 15px
+}
+
+#first-name-err,
+#last-name-err,
+#email-err,
+#password-err,
+#confirm-password-err {
+    color: red;
+    font-size: 13px;
+}
+
+/* #loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#loader  {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    border-top: 4px solid #000;
+    animation: spin 1s linear infinite;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    /* border-bottom: 16px solid blue; */
+/* position: absolute;
+    left: 600px;
+    top: 137px;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s cubic-bezier(.47,0,.74,.71) infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+#firstNameWarning,
+#lastNameWarning,
+#emailWarning,
+#passwordWarning,
+#confpasswordWarning {
+    color: red;
+    width: 50%;
+    margin: 0 auto;
+    padding: 9px;
+}
+
+.checkbox {
+    width: 63%;
+    margin: 0 auto;
+    padding-top: 9px;
+    justify-content: end;
+    display: flex;
+}
+
+#eyes {
+    width: 10%;
+    margin: 0 auto;
+}
+
+
+
+
+#loader {
+    border-radius: 50%;
+    border: 4px solid #fff;
+    border-top-color: rgb(255, 255, 255);
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-top: 4px solid #000;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 170px;
+    left: 650px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+@keyframes spin {
+    0% {
+
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

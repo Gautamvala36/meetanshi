@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="loader" id="loader" style="display: none;"></div>    
+
+    <div class="html-form" id="container">
+        <h3>Registration Form</h3>
+        <form action="#" method="" id="myForm">
+            <input type="text" id="firstname" class="input" placeholder="FirstName">
+            <p id="firstNameWarning"></p>
+            <input type="text" id="lastname" class="input" placeholder="LastName">
+            <p id="lastNameWarning"></p>
+            <input type="email" id="email" class="input" placeholder="Email">
+    
+            <p id="emailWarning"></p>
+            <input type="password" id="password" class="input" placeholder="Password">
+            <div class="checkbox">
+                <label for="showPassword">Show Password</label>
+                <input type="checkbox" id="showPassword">
+            </div>
+            <p id="passwordWarning"></p>
+            <input type="password" id="confirm_password" class="input" placeholder="Confirm Password">
+
+            <p id="confpasswordWarning"></p>
+            <input type="submit" id="validate" onclick="return myFunction()" value="Register">
+        </form>
+    </div>
+    <div id="error" style="width:80%;background-color: #f5ffbf;border-radius: 20px;margin: 2% auto;display: none; ">
+        <h5 style="text-align: center;padding: 10px; font-size: 28px">This email already Registration place <span
+                style="color: red" id="Registration">Login</span> </h5>
+
+    </div>
+    <script src="myscript.js"></script>
+    <script src="https://kit.fontawesome.com/16e157803b.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
