@@ -1,0 +1,320 @@
+.container {
+    /* width: 95%; */
+    /* margin: 0 auto; */
+    /* padding: 0px; */
+    /* overflow-x: hidden; */
+
+}
+
+* {
+    font-size: 14px;
+    font-family: "Arial", sans-serif;
+    /* font-weight: 400; */
+}
+
+.btn {
+
+    background-color: #F8F8F8;
+    justify-content: end;
+    display: flex;
+    font-weight: 700;
+}
+
+
+.btn_back {
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    /* font-weight: 700; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #F8F8F8;
+    color: black;
+}
+
+.btn_back:hover {
+    background-color: #eb5c30;
+    color: white;
+}
+
+.reset {
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #F8F8F8;
+    color: black;
+}
+
+.reset:hover {
+    background-color: #eb5c30;
+    color: white;
+}
+
+.sava_edit {
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #F8F8F8;
+    color: black;
+}
+
+.sava_edit:hover {
+    background-color: #eb5c30;
+    color: white;
+}
+
+.sava_outlet {
+    background-color: #eb5c30;
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+/* first toggle ON and OFF*/
+
+@keyframes change-content {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.switch {
+    position: absolute;
+    clip-path: circle(0%);
+    opacity: 0;
+}
+
+.switch+label {
+    display: inline-block;
+    /* margin: 20px; */
+    width: 47px;
+    height: 20px;
+    position: relative;
+    border: 2px solid #00030529;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    background-color: #00030529;
+}
+
+.switch+label:before,
+.switch+label:after {
+    display: inline-block;
+    position: absolute;
+}
+
+.switch+label:before {
+    content: "";
+    width: 24px;
+    height: 20px;
+    border-radius: 25px;
+    left: 0px;
+    top: 0px;
+    background: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.switch+label:after {
+    display: inline-block;
+    content: "No";
+    left: 90px;
+    transform: translateX(-60%);
+    color: black;
+}
+
+.switch:checked+label:before {
+    left: 23px;
+}
+
+input:checked+label {
+    background: #83A345;
+}
+
+.switch:checked+label:after {
+    content: "Yes";
+    color: black;
+    animation: change-content 0.3s forwards linear;
+}
+
+/*first toggle end  */
+
+/* second toggle ON and OFF*/
+
+@keyframes change-content {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.switch1 {
+    position: absolute;
+    clip-path: circle(0%);
+    opacity: 0;
+}
+
+.switch1+label {
+    display: inline-block;
+    width: 47px;
+    height: 20px;
+    position: relative;
+    border: 2px solid #00030529;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    background-color: #00030529;
+}
+
+.switch1+label:before,
+.switch1+label:after {
+    display: inline-block;
+    position: absolute;
+}
+
+.switch1+label:before {
+    content: "";
+    width: 24px;
+    height: 20px;
+    border-radius: 25px;
+    left: 0px;
+    top: 0px;
+    background: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.switch1+label:after {
+    display: inline-block;
+    content: "No";
+    left: 90px;
+    transform: translateX(-60%);
+    color: black;
+}
+
+.switch1:checked+label:before {
+    left: 23px;
+}
+
+input:checked+label {
+    background: #83A345;
+}
+
+.switch1:checked+label:after {
+    content: "Yes";
+    color: black;
+    animation: change-content 0.3s forwards linear;
+}
+
+/*second toggle end  */
+
+.Field {
+    margin: 0 auto;
+    width: 80%;
+    padding: 12px;
+    display: flex;
+    /* new */
+}
+
+.label {
+    align-self: center;
+    width: 160px;
+    justify-content: end;
+    display: flex;
+}
+
+.input{
+    width: 960px;
+}
+
+span.req {
+    display: inline;
+    float: none;
+    color: red;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 8px;
+    ;
+}
+
+input {
+    width: 70%;
+    height: 20px;
+}
+
+/* select tag */
+select {
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    background-color: white;
+    background-image: none;
+    cursor: pointer;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+
+/* Custom Select wrapper */
+.select {
+    position: relative;
+    display: inline-flex;
+    width: 20em;
+    height: 3em;
+    overflow: hidden;
+    border: 1px solid #888484;
+
+}
+
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #e1e2e3;
+    transition: .25s all ease;
+    pointer-events: none;
+    border-left: 1px solid #888484;
+
+}

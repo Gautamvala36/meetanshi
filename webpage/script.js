@@ -121,7 +121,7 @@ var password = document.getElementById("password");;
 var passwordValidation = function () {
 
     passwordValue = password.value.trim();
-    validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+    validPassword =  /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/    ;
 
     passwordErr = document.getElementById('password-err');
 
@@ -132,7 +132,7 @@ var passwordValidation = function () {
         passwordErr.innerHTML = "Password is required";
     } 
     else if (validPassword.test(passwordValue)) {
-        passwordErr.innerHTML = "Password must have at least one Upper,lowercase, digit, special characters & 8 characters";
+        passwordErr.innerHTML = "Password must have at least one Upper,lowercase, digit, special characters & 6 characters";
     }
     else {
         passwordErr.innerHTML = "";

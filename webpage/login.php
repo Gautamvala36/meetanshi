@@ -94,7 +94,7 @@
                     <input type="password" class="in bn" id="password" placeholder="Password">
                     <div id="password-err"></div>
                     <div class="links">
-                        <p>Don’t have an Account?<a href="index2.html">create account</a></p>
+                        <p>Don’t have an Account?<a href="index2.php">create account</a></p>
                         <p><a href="">forgot password?</a></p>
                     </div>
                     <div class="loder">
@@ -153,7 +153,7 @@
             });
 
             function navigate() {
-                window.location.href = "index2.html";
+                window.location.href = "index2.php";
             }
             $(function () {
 

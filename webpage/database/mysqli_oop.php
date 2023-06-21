@@ -3,7 +3,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$dbname = "registration";
+$dbname = "webpage";
 
 // connection established
 $conn = new mysqli($server, $username, $password,$dbname);
@@ -11,9 +11,9 @@ $conn = new mysqli($server, $username, $password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   } 
-
-
-
+else{
+  echo "Connection don";
+}
 // $conn -> close();
 
 ?>

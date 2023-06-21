@@ -1,0 +1,26 @@
+* {
+    font-size: 14px;
+    font-family: "Arial", sans-serif;
+    font-weight: 700;
+}
+.btn {
+
+    background-color: #F8F8F8;
+    justify-content: end;
+    display: flex;
+}
+.new_outlet {
+    background-color: #eb5c30;
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}

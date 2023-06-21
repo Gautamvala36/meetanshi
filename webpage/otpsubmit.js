@@ -25,7 +25,7 @@ otpVerify1.oninput = function () {
 document.getElementById("verifybtn").onclick = function (e) {
 
     if(otpVerification() == true){
-      alert("Your account is created successfully");  window.location.href = "login.html";
+      alert("Your account is created successfully");  window.location.href = "index2.php";
       return false;
     }
     else{

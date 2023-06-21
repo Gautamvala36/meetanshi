@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *:after,
+        *:before {
+            box-sizing: border-box;
+        }
+
+        @keyframes change-content {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .switch {
+            position: absolute;
+            clip-path: circle(0%);
+            opacity: 0;
+        }
+
+        .switch+label {
+            display: inline-block;
+            margin: 20px;
+            width: 56px;
+            height: 30px;
+            position: relative;
+            border: 2px solid #607d8b;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .switch+label:before,
+        .switch+label:after {
+            display: inline-block;
+            position: absolute;
+        }
+
+        .switch+label:before {
+            content: "";
+            width: 27px;
+            height: 26px;
+            border-radius: 25px;
+            left: 0px;
+            top: 0px;
+            background: red;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .switch+label:after {
+            display: inline-block;
+            content: "OFF";
+            /* bottom: -60px; */
+            left: 90px;
+            transform: translateX(-60%);
+            color: black;
+        }
+
+        .switch:checked+label:before {
+            left: 26px;
+        }
+
+        input:checked+label {
+            background: #7AA231;
+        }
+
+        input:focus+label {
+            box-shadow: 0 0 1px #FE2712;
+        }
+
+        .switch:checked+label:after {
+            content: "ON";
+            color: black;
+            animation: change-content 0.3s forwards linear;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+        <input class="switch" id="first-toggle-btn" type="checkbox" />
+        <label for="first-toggle-btn"></label>
+    </div>
+
+</body>
+
+</html>
