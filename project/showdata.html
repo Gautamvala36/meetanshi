@@ -1,20 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="showdata.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="showdata.css">
+  <title>Show Data</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="container">
-        <div class="btn">
-            <button type="submit" id="new_outlet" class="new_outlet"><span>New Outlet</span></button>
+  <div class="container">
+   
+    <form action="from.php" method="post">
+      <div class="btn">
+        <a href=""> <button type="submit" id="new_outlet" class="new_outlet"><span>New Outlet</span></button></a>
+      </div>
+      <div class="headar">
+        <div class="records">
+          <span>1</span>
+          <span>records found</span>
         </div>
-        <form action="" method="post">
-           
-        </form>
-    </div>
+      </div>
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th id="id">ID</th>
+              <th id="outlet_name">Outlet Name</th>
+              <th id="status">Status</th>
+              <th id="action">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Outlet 1</td>
+              <td>Active</td>
+              <td>
+                <a href="#" class="action-link"><span>Select </span>
+                  <!-- <span class="toggle-arrow">&#9662;</span> -->
+                </a>
+                <div class="action-box">
+                  <a href="#">Edit</a>
+                  <a href="#">Delete</a>
+                </div>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Outlet 1</td>
+              <td>Active</td>
+              <td>
+                <a href="#" class="action-link"><span>Select </span></a>
+                <div class="action-box">
+                  <a href="#">Edit</a>
+                  <a href="#">Delete</a>
+                </div>
+                </a>
+              </td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>

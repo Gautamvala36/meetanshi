@@ -96,6 +96,7 @@ var emailAddressValidation = function () {
     }
 
 }
+
 let emaildata = ["gautam@gmail.com", "jay@gmail.com"];
 function checkemaildata() {
     if (emailAddressValue == "") {
@@ -109,6 +110,7 @@ function checkemaildata() {
     }
     return false;
 }
+
 emailAddress.oninput = function () {
 
     emailAddressValidation();
@@ -121,16 +123,16 @@ var password = document.getElementById("password");;
 var passwordValidation = function () {
 
     passwordValue = password.value.trim();
-    validPassword =  /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/    ;
+    validPassword = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
 
     passwordErr = document.getElementById('password-err');
 
     if (passwordValue == "") {
         passwordErr.innerHTML = "";
-    } 
+    }
     else if (passwordValue == "") {
         passwordErr.innerHTML = "Password is required";
-    } 
+    }
     else if (validPassword.test(passwordValue)) {
         passwordErr.innerHTML = "Password must have at least one Upper,lowercase, digit, special characters & 6 characters";
     }
@@ -175,22 +177,24 @@ document.getElementById("btn1").onclick = function (e) {
     emailAddressValidation();
     passwordValidation();
     checkemaildata();
-  
+
     if (
-      firstNameValidation() == true &&
-      LastNamValidation() == true &&
-      emailAddressValidation() == true &&
-      passwordValidation() == true &&
-      checkemaildata() == false
+        firstNameValidation() == true &&
+        LastNamValidation() == true &&
+        emailAddressValidation() == true &&
+        passwordValidation() == true &&
+        checkemaildata() == false
     ) {
-      $(".loader").css("display", "block");
-      $(".btn").css("display", "none");
-      setTimeout(() => {
-         $(".optverfiy1").css("display", "block");
-          $(".loader").css("display", "none");
-      }, 4000);
-      return false;
+        $(".loader").css("display", "block");
+        $(".btn").css("display", "none");
+        setTimeout(() => {
+            $(".optverfiy1").css("display", "block");
+            $(".loader").css("display", "none");
+        }, 4000);
+        return false;
     } else {
-      return false;
+        return false;
     }
-  };
+};
+
+

@@ -26,23 +26,42 @@ class database
     }
 
     // Function to insert into the database
-    public function insert($table, $params = array())
-    {
+    // public function insert($table, $params = array())
+    // {
+    //     if ($this->tableExists($table)) {
+
+    //         $table_columns = implode(',', array_keys($params));
+    //         $table_value = implode("','", $params);
+    //         $sql = "INSERT INTO $table ($table_columns) VALUES ('$table_value')";
+
+    //         if ($this->mysqli->query($sql)) {
+    //             array_push($this->result, $this->mysqli->insert_id);
+    //             return true; // The data has been inserted
+    //         } else {
+    //             array_push($this->result, $this->mysqli->error);
+    //             return false;
+    //         }
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+    public function insert($table,$status,$email,$outletname,$adminname,$firstname,$lastname,$company,$telephone,$street,$city,$postcode,$country,$states) {
         if ($this->tableExists($table)) {
 
-            $table_columns = implode(',', array_keys($params));
-            $table_value = implode("','", $params);
-            $sql = "INSERT INTO $table ($table_columns) VALUES ('$table_value')";
+        // $table_columns = implode(',', array_keys($params));
+        // $table_value = implode("','", $params);
+        $sql = "INSERT INTO $table  VALUES (null,'$status','$email','$outletname','$adminname','$firstname','$lastname','$company','$telephone','$street','$city','$postcode','$country','$states')";
 
-            if ($this->mysqli->query($sql)) {
-                array_push($this->result, $this->mysqli->insert_id);
-                return true; // The data has been inserted
-            } else {
-                array_push($this->result, $this->mysqli->error);
-                return false;
-            }
+        if ($this->mysqli->query($sql) === true) {
+            array_push($this->result, $this->mysqli->insert_id);
+            return true; // The data has been inserted
         } else {
+            array_push($this->result, $this->mysqli->error);
             return false;
+        }
+        } else {
+        return false;
         }
     }
 

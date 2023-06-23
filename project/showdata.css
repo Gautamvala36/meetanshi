@@ -1,26 +1,144 @@
 * {
-    font-size: 14px;
-    font-family: "Arial", sans-serif;
-    font-weight: 700;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
 }
-.btn {
 
-    background-color: #F8F8F8;
-    justify-content: end;
-    display: flex;
+.btn {
+  background-color: #E6E6E680;
+  justify-content: end;
+  display: flex;
+  border-top: 1px solid #8989895c;
+  border-bottom: 1px solid #8989895c;
 }
+
+button>span {
+  font-weight: 600;
+}
+
 .new_outlet {
-    background-color: #eb5c30;
-    border: none;
-    color: white;
-    padding: 13px 20px;
-    ;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+  background-color: #eb5c30;
+  border: none;
+  color: white;
+  padding: 13px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+/* header  */
+
+.headar{
+  height: 85px;
+}
+
+.records {
+  top: 90px;
+  position: absolute;
+  left: 35px;
+}
+
+
+/* ------------table css start---------------- */
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-weight: 600;
+}
+
+td {
+  border: 1px solid black;
+  border-style: dotted;
+}
+
+.table {
+  margin: 0 auto;
+  display: block;
+  width: 96%;
+}
+
+table {
+  outline: 1px solid #d5cfcf;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  font-size: 13px;
+  background-color: #514943;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th#outlet_name {
+  width: 50%;
+}
+
+th#id,
+th#status {
+  width: 18%;
+}
+
+th#action {
+  width: 8%;
+}
+
+/* --------------anchor tag with text box in actoin start code----- */
+.action-box {
+  outline: 0.5px solid #0004ffd1;
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px 17px 0 5px;
+}
+
+a.action-link {
+  color: #0004ffd1;
+}
+
+.action-box a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.action-link {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.toggle-arrow {
+  margin-left: 5px;
+}
+
+.action-link:after {
+  content: "\25bc";
+}
+
+.action-link.is-active:after {
+  content: "\25b2";
+}
+
+/* Helpers */
+.action-box {
+  display: none;
 }
