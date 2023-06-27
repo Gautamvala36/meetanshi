@@ -26,47 +26,87 @@ class database
     }
 
     // Function to insert into the database
-    // public function insert($table, $params = array())
-    // {
-    //     if ($this->tableExists($table)) {
-
-    //         $table_columns = implode(',', array_keys($params));
-    //         $table_value = implode("','", $params);
-    //         $sql = "INSERT INTO $table ($table_columns) VALUES ('$table_value')";
-
-    //         if ($this->mysqli->query($sql)) {
-    //             array_push($this->result, $this->mysqli->insert_id);
-    //             return true; // The data has been inserted
-    //         } else {
-    //             array_push($this->result, $this->mysqli->error);
-    //             return false;
-    //         }
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
-    public function insert($table,$status,$email,$outletname,$adminname,$firstname,$lastname,$company,$telephone,$street,$city,$postcode,$country,$states) {
+    public function insert($table, $params = array())
+    {
         if ($this->tableExists($table)) {
 
-        // $table_columns = implode(',', array_keys($params));
-        // $table_value = implode("','", $params);
-        $sql = "INSERT INTO $table  VALUES (null,'$status','$email','$outletname','$adminname','$firstname','$lastname','$company','$telephone','$street','$city','$postcode','$country','$states')";
+            $table_columns = implode(',', array_keys($params));
+            $table_value = implode("','", $params);
+            $sql = "INSERT INTO $table ($table_columns) VALUES ('$table_value')";
 
-        if ($this->mysqli->query($sql) === true) {
-            array_push($this->result, $this->mysqli->insert_id);
-            return true; // The data has been inserted
+            if ($this->mysqli->query($sql)) {
+                array_push($this->result, $this->mysqli->insert_id);
+                echo "Submit insert";
+                return true; // The data has been inserted
+            } else {
+                array_push($this->result, $this->mysqli->error);
+                return false;
+            }
         } else {
-            array_push($this->result, $this->mysqli->error);
             return false;
         }
+    }
+    // Function to insert into the database 2
+    public function ins($table, $params = array())
+    {
+        if ($this->tableExists($table)) {
+
+            $table_columns = implode(',', array_keys($params));
+            $table_value = implode("','", $params);
+            $sql = "INSERT INTO $table ($table_columns) VALUES ('$table_value')";
+
+            if ($this->mysqli->query($sql)) {
+                $id = array_push($this->result, $this->mysqli->insert_id);
+                echo "Submit insert";
+                echo "$id";
+                return $id; // The data has been inserted
+            } else {
+                array_push($this->result, $this->mysqli->error);
+                return false;
+            }
         } else {
-        return false;
+            return false;
         }
     }
 
+    // check outlet_name
+
+    public function check($table, $outletname)
+    {
+        $sql = "SELECT * FROM $table WHERE outlet_name like '%{$outletname}%' ";
+        $result = $this->mysqli->query($sql);
+        $row = $result->fetch_assoc();
+        return ($row);
+    }
+
+
+    // Function to select outlet_name 
+    // public function option($table)
+    // {
+    //     $sql = "SELECT admin_name FROM $table ";
+    //     $result = $this->mysqli->query($sql);
+    //     $row = $result->fetch_assoc();
+    //     return ($row);
+
+    // }
+
+
+    // edit to select 
+    public function sele($table, $id)
+    {
+        $sql = "SELECT * FROM $table WHERE id ='$id' ";
+        $result = $this->mysqli->query($sql);
+        $row = $result->fetch_assoc();
+        var_dump($row);
+        return ($row);
+    }
+
+
+
+
+
     // Function to update row the database
-    public function update($table, $params = array(), $where = null)
+    public function update($table, $params = array(), $where = "")
     {
         if ($this->tableExists($table)) {
 
@@ -89,8 +129,18 @@ class database
         }
     }
 
+    public function upp($table, $status, $email, $outletname, $adminname, $firstname, $lastname, $company, $telephone, $street, $city, $postcode, $country, $state)
+    {
+        $sql = "UPDATE $table
+    
+        SET status = '$status', email_id = '$email',admin_name = '$adminname', first_name =' $firstname', last_name = '$lastname', company = '$company', telephone = '$telephone', street = '$street', city = '$city',postcode = '$postcode', country = '$country', state =' $state  '
+        WHERE outlet_name = '$outletname'";
+        $this->mysqli->query($sql);
+        //        return($sql);
+    }
+
     // Function to delete table or row(s) database
-    public function delete($table, $where = null)
+    public function delete($table, $where = "")
     {
         if ($this->tableExists($table)) {
             $sql = "DELETE FROM $table";
@@ -139,6 +189,9 @@ class database
             return false;
         }
     }
+
+
+
     public function sql($sql)
     {
         $query = $this->mysqli->query($sql);
@@ -150,6 +203,34 @@ class database
             return false;
         }
     }
+
+
+    // count new
+    public function field($table)
+    {
+        $sql = "SELECT COUNT(*) AS count FROM $table";
+        ;
+        $result = $this->mysqli->query($sql);
+        if ($result) {
+            // Get the count of rows
+            $row = $result->fetch_assoc();
+            //            $rowCount = $row['count'];
+            return ($row);
+        }
+    }
+
+    // select table data
+
+    public function show($table)
+    {
+
+        $sql = "SELECT * FROM $table ";
+        $result = $this->mysqli->query($sql);
+        //        $row = $result->fetch_assoc();
+        return ($result);
+    }
+
+
 
     // private function to check if table exists for use with queries
     private function tableExists($table)

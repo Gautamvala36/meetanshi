@@ -1,33 +1,14 @@
 <?php
-class QueryHandler
-{
-  private $servername = "localhost";
-  private $username = "root";
-  private $password = "";
-  private $database = "registration";
-  public $conn;
+include 'database.php';
+// include 'database2.php'; // new
+$object = new database();
 
-  function __construct()
-  {
-    $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
-    if ($this->conn->connect_error) {
-      die("Connection failed: " . $this->conn->connect_error);
-    } else {
-      echo 'Connection success';
-    }
-  }
-}
-
-$obj = new QueryHandler();
 extract($_POST);
-
-if (isset($_POST['status1']) == true) {
-  $status1 = 1;
-} else {
-  $status1 = 0;
-}
+$toggle = $_POST['toggle'];
+// var_dump($toggle);
+$status = $_POST['status'];
 $email = $_POST['email_id'];
-$outletname = $_POST['outlet_name'];
+$outletname = $_POST['outlet_name']; // name
 $adminname = $_POST['admin_name'];
 $firstname = $_POST['first_name'];
 $lastname = $_POST['last_name'];
@@ -39,19 +20,46 @@ $postcode = $_POST['post_code'];
 $country = $_POST['country'];
 $state = $_POST['state'];
 
-$sql = "INSERT INTO project VALUES (null,'$status1','$email','$outletname','$adminname','$firstname','$lastname','$company','$telephone','$street','$city','$postcode','$country','$state')";
-var_dump($sql);
-$obj->conn->query($sql);
 
-// Send the response back to the AJAX request
-if ($obj->conn->affected_rows > 0) {
-  $response = "Data inserted successfully.";
-} else {
-  $response = "Error: " . $obj->conn->error;
+$g = $object->check('project', $outletname);
+
+// var_dump($g);
+
+foreach($g as $value){
+    // $colors = array($value[0]);
+    var_dump($value);
+   
 }
+// if($str==1){
+//     $obj->insert("item_table","$my_value");
+// }
+// else{
+//     $obj->update("item_table",$up_data ,$itemid);
+// }
 
-echo $response;
 
-// Close the database connection
-$obj->conn->close();
+
+
+if ($g === NULL) {
+    if ($toggle == true) {
+
+        $object->ins('project', ['status' => $status, 'email_id' => $email, 'outlet_name' => $outletname, 'admin_name' => $adminname]);
+        echo "Insert Result is : ";
+        // var_dump('id');
+        var_dump($object->getResult());
+
+    } else if($toggle == false){
+        $object->insert('project', ['status' => $status, 'email_id' => $email, 'outlet_name' => $outletname, 'admin_name' => $adminname, 'first_name' => $firstname, 'last_name' => $lastname, 'company' => $company, 'telephone' => $telephone, 'street' => $street, 'city' => $city, 'postcode' => $postcode, 'country' => $country, 'state' => $state]);
+        echo "Insert Result is : ";
+    }
+} 
+else if($g['outlet_name'] == $outletname) {
+    $g = $object->upp('project', $status, $email, $outletname, $adminname,$firstname,$lastname, $company, $telephone,  $street, $city, $postcode,  $country, $state);
+    header('location: showdata.php');
+}
+// else if($g['outlet_name'] == $outletname) {
+//     var_dump("same Outlet NAme");
+// }
+
+
 ?>

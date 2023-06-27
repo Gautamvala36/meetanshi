@@ -3,68 +3,25 @@
 <!-- https://prnt.sc/nKjpuCsNTPX7 from1-->
 <!-- https://prnt.sc/ZM4nxd_R3OXB  from2 -->
 
+
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- // error_reporting(0); 
-// include 'database.php';
-// $object = new database();
+<?php
+include 'database.php';
 
-// if (isset($_POST['status'])) {
+$object = new database();
 
-//     if (isset($_POST['status']) == true) {
-//         $status = 1;
-//     } else {
-//         $status = 0;
-//     }
-//     $email = $_POST['email_id'];
-//     $outletname = $_POST['outlet_name'];
-//     $adminname = $_POST['admin_name'];
-//     $firstname = $_POST['first_name'];
-//     $lastname = $_POST['last_name'];
-//     $company = $_POST['company'];
-//     $telephone = $_POST['telephone'];
-//     $street = $_POST['street'];
-//     $city = $_POST['city'];
-//     $postcode = $_POST['postcode'];
-//     $country = $_POST['country'];
-//     $states = $_POST['state'];
+if (isset($_GET['id'])) {
+    // var_dump($_GET);
+    $id = $_GET['id'];
+    // var_dump($id);
+    // $i = new crud('localhost', 'root', "", 'outlet');
+    $g = $object->sele('project', $id);
+    // var_dump($g);
+}
 
-    // $object = new database('localhost', 'root', "", 'registration');
-    // $name = $object->check('project', $outletname);
-    // var_dump($name)
-    // // $name = $object->
-
-    // $object->insert('project', ['status' => $status, 'email_id' => $email, 'outlet_name' => $outletname, 'admin_name' => $adminname, 'first_name' => $firstname, 'last_name' => $lastname, 'company' => $company, 'telephone' => $telephone, 'street' => $street, 'city' => $city, 'postcode' => $postcode, 'country' => $country, 'state' => $states]);
-    // var_dump($name);
-
-    // echo "Insert Result is : ";
-    // var_dump($object->getResult());
-    // header("location: showdata.html");
-
-    //     if ($name === NULL) {
-//         if (isset($_POST['toggle']) == false) {
-//             $object = new database('localhost', 'root', "", 'registration');
-//             $name = $object->insert('project', $status, $email, $outletname, $adminname, $firstname, $lastname, $company, $telephone, $street, $city, $postcode, $country, $states);
-//             var_dump($object->getResult());
-
-    //         }
-//         //  else {
-// //             $object= new database('localhost', 'root', "", 'registration');
-// //             $name = $object->insert('project', $Outlet_Name, $status, $Admin_User, $email, $Name, $lname, $Company, $Telephone, $Street, $City, $Postcode, $Country, $State);
-// // //        var_dump($name);
-// //         }
-//     }
-//     // else if ($name['OutlateName'] == $Outlet_Name) {
-//     //     $name = $object->upp('detprojectails', $Outlet_Name, $status, $Admin_User, $email, $Name, $lname, $Company, $Telephone, $Street, $City, $Postcode, $Country, $State);
-
-    //     // }
-
-// }
-
-// print_r($_POST);
-
-// ?> -->
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -81,9 +38,9 @@
 <body>
     <div class="container">
 
-        <form action="" method="post" id="myform">
+        <form action="" method="POST" id="myform">
             <div class="btn">
-                <a href="showdata.html">
+                <a href="showdata.php">
                     <button type="button" id="btn_back" class="btn_back">
                         <i class="fa-solid fa-arrow-left" style="padding-right: 15px;"></i>
                         <span>Back</span>
@@ -93,10 +50,12 @@
                 <button type="submit" id="sava_edit" name="sava_edit" class="sava_edit">
                     <span>Save and Continue Edit</span>
                 </button>
-                <button type="button" id="sava_outlet" name="sava_outlet" class="sava_outlet">
+                <button type="button" id="sava_edit" name="sava_outlet" class="sava_outlet">
                     <span>Save Outlet</span>
                 </button>
             </div>
+            <p id="success" style="display:none;"></p>
+            <p id="error" style="display:none;"></p>
             <div class="first_from" id="first_from">
                 <div class="Field">
                     <!-- first toggle  -->
@@ -105,8 +64,15 @@
                         <span id="req_0" class="req"></span>
                     </div>
                     <div class="input">
-                        <input class="status" name="status" id="first-toggle-btn" type="checkbox" data-no="No"
-                            data-yes="Yes" />
+                        <input class="status" name="status" id="first-toggle-btn" type="checkbox" value="1<?php
+                            if($g['status'] == "off"){
+                                $g['status'] = "on";
+                            }
+                            else{
+                                $g['status'] = "off";
+                            }
+                        ?>" 
+                        />
                         <label for="first-toggle-btn">
                         </label>
                     </div>
@@ -117,7 +83,9 @@
                         <span id="req_0" class="req">*</span>
                     </div>
                     <div class="input">
-                        <input id="email_id" name="email_id" type="email" class="field text">
+                        <input id="email_id" name="email_id" type="email" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['email_id'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="email_err" class="error"></div>
@@ -127,7 +95,9 @@
                         <span id="req_0" class="req">*</span>
                     </div>
                     <div class="input">
-                        <input id="outlet_name" name="outlet_name" type="text" class="field text">
+                        <input id="outlet_name" name="outlet_name" type="text" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['outlet_name'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="outlet_name_err" class="error"></div>
@@ -139,13 +109,37 @@
                     <div class="input">
                         <div class="select">
                             <select name="admin_name" class="admin_name" id="admin_name">
-                                <option value="0">Please Select Company Name</option>
-                                <option value="1">Volvo</option>
-                                <option value="2">Amazon</option>
-                                <option value="3">BMW</option>
-                                <option value="4">Mercedes</option>
-                                <option value="5">Myntra</option>
-                                <option value="6">Audi</option>
+                                <option value="" selected>Please Select Company Name</option>
+                                <option value="Volvo"<?php 
+                                    if ($g['admin_name'] == 'Volvo' ) {
+                                        echo "selected";
+                                    }
+                                ?>>Volvo</option>
+                                <option value="Amazon"<?php 
+                                    if ($g['admin_name'] == 'Amazon' ) {
+                                        echo "selected";
+                                    }
+                                ?>>Amazon</option>
+                                <option value="BMW"<?php 
+                                    if ($g['admin_name'] == 'BMW' ) {
+                                        echo "selected";
+                                    }
+                                ?>>BMW</option>
+                                <option value="Mercedes"<?php 
+                                    if ($g['admin_name'] == 'Mercedes' ) {
+                                        echo "selected";
+                                    }
+                                ?>>Mercedes</option>
+                                <option value="Myntra"<?php 
+                                    if ($g['admin_name'] == 'Myntra' ) {
+                                        echo "selected";
+                                    }
+                                ?>>Myntra</option>
+                                <option value="Audi"<?php 
+                                    if ($g['admin_name'] == 'Audi' ) {
+                                        echo "selected";
+                                    }
+                                ?>>Audi</option>
                             </select>
                         </div>
                     </div>
@@ -159,7 +153,7 @@
                     <span id="req_0" class="req"> </span>
                 </div>
                 <div class="input">
-                    <input class="switch1" id="second-toggle-btn" type="checkbox" value="0" />
+                    <input class="switch1" name="switch1" id="second-toggle-btn" type="checkbox" value="0" />
                     <label for="second-toggle-btn"></label>
                 </div>
             </div>
@@ -170,7 +164,9 @@
                         <span id="req_0" class="req">*</span>
                     </div>
                     <div class="input">
-                        <input id="first_name" name="first_name" type="text" class="field text">
+                        <input id="first_name" name="first_name" type="text" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['first_name'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="firstname_err" class="error"></div>
@@ -180,7 +176,9 @@
                         <span id="req_0" class="req">*</span>
                     </div>
                     <div class="input">
-                        <input id="last_name" name="last_name" type="text" class="field text">
+                        <input id="last_name" name="last_name" type="text" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['last_name'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="lastname_err" class="error"></div>
@@ -190,7 +188,9 @@
                         <span id="req_0" class="req"></span>
                     </div>
                     <div class="input">
-                        <input id="company" name="company" type="text" class="field text">
+                        <input id="company" name="company" type="text" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['company'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="company_err" class="error"></div>
@@ -200,7 +200,9 @@
                         <span id="req_0" class="req">*</span>
                     </div>
                     <div class="input">
-                        <input id="telephone" name="telephone" type="tel" class="field text">
+                        <input id="telephone" name="telephone" type="tel" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['telephone'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="telephone_err" class="error"></div>
@@ -210,7 +212,9 @@
                         <span id="req_0" class="req">*</span>
                     </div>
                     <div class="input">
-                        <input id="street" name="street" type="text" class="field text">
+                        <input id="street" name="street" type="text" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['street'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="street_err" class="error"></div>
@@ -220,7 +224,9 @@
                         <span id="req_0" class="req">*</span>
                     </div>
                     <div class="input">
-                        <input id="city" name="city" type="text" class="field text">
+                        <input id="city" name="city" type="text" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['city'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="city_err" class="error"></div>
@@ -230,7 +236,9 @@
                         <span id="req_0" class="req">*</span>
                     </div>
                     <div class="input">
-                        <input id="postcode" name="postcode" type="text" class="field text">
+                        <input id="postcode" name="postcode" type="text" class="field text" value="<?php if (isset($_GET['id'])) {
+                            echo $g['postcode'];
+                        } ?>">
                     </div>
                 </div>
                 <div id="postcode_err" class="error"></div>
@@ -242,7 +250,10 @@
                     <div class="input">
                         <div class="select">
                             <select id="country" name="country">
-                                <option value="" selected="selected">--Please Select--</option>
+                                <option value=""><?php if (isset($_GET['id'])) {
+                                    echo $g['country'];
+                                } ?></option>
+                                <option value="">--Please Select--</option>
                             </select>
                         </div>
                     </div>
@@ -256,16 +267,23 @@
                     <div class="input">
                         <div class="select">
                             <select id="state" name="state">
-                                <option value="" selected="selected">Please Select a region,state or province.</option>
+                                <option value="<?php if (isset($_GET['id'])) {
+                                    echo $g['state'];
+                                } ?>" selected="selected">
+                                   </option>
+                                <option value="">
+                                    Please Select a region,state or province.</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div id="state_err" class="error"></div>
             </div>
+            <input type="hidden">
         </form>
     </div>
-    <script src="hello.js"></script>
+    <script src="ajaxinsert.js"></script>
+    <!-- <script src="ajaxupdate.js"></script> -->
     <script src="country.js"></script>
     <script src="from_script.js"></script>
 </body>

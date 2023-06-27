@@ -269,10 +269,9 @@ document.getElementById("sava_edit").onclick = function (e) {
     postcodeValidation();
     countryValidation();
 
-
     if (emailAddressValidation() == true && outletnameValidation() == true && adminnameValidation() == true && firstNameValidation() == true && lastNameValidation() == true && telephoneValidation() == true && streetValidation() == true && cityValidation() == true && postcodeValidation() == true && countryValidation() == false) {
-        window.location.href = "from.php";
-        // return true;
+        // window.location.href = "from.php";
+        return true;
     } else {
         return false;
 
@@ -286,21 +285,6 @@ $(document).ready(function () {
         $("#second_from").toggle();
     });
 });
-
-
-// function fun() {
-//     document.getElementById("myform").reset();
-//     $("#second-toggle-btn").on("click", function () {
-//         $("#second_from").toggle();
-//     });
-// }
-
-// $('form').on('.reset', function () {
-//     $(".myform", $(this)).each(function () {
-//         var $t = $(this);
-//         $t.val($t.data('defaultvalue'));
-//     });
-// });
 
 // // ----------------reset code------------
 $(document).ready(function () {
