@@ -38,7 +38,7 @@ $(document).ready(function () {
                 last_name: lastname, company: company, tele_phone: telephone, street: street, city: city, post_code: postcode, country: country, state: state
             },
             success: function (response) {
-                // console.log(data);
+                console.log(data);
                 console.log(response);
                
             },

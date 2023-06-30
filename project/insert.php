@@ -20,27 +20,14 @@ $postcode = $_POST['post_code'];
 $country = $_POST['country'];
 $state = $_POST['state'];
 
+$status = ["status" => true];
 
-$g = $object->check('project', $outletname);
+$check = $object->check('project', $outletname);
 
-// var_dump($g);
-
-foreach($g as $value){
-    // $colors = array($value[0]);
-    var_dump($value);
-   
+if ($check['outlet_name'] == $outletname) {
+    echo" same outlet name ";
 }
-// if($str==1){
-//     $obj->insert("item_table","$my_value");
-// }
-// else{
-//     $obj->update("item_table",$up_data ,$itemid);
-// }
-
-
-
-
-if ($g === NULL) {
+else {
     if ($toggle == true) {
 
         $object->ins('project', ['status' => $status, 'email_id' => $email, 'outlet_name' => $outletname, 'admin_name' => $adminname]);
@@ -52,13 +39,26 @@ if ($g === NULL) {
         $object->insert('project', ['status' => $status, 'email_id' => $email, 'outlet_name' => $outletname, 'admin_name' => $adminname, 'first_name' => $firstname, 'last_name' => $lastname, 'company' => $company, 'telephone' => $telephone, 'street' => $street, 'city' => $city, 'postcode' => $postcode, 'country' => $country, 'state' => $state]);
         echo "Insert Result is : ";
     }
-} 
-else if($g['outlet_name'] == $outletname) {
-    $g = $object->upp('project', $status, $email, $outletname, $adminname,$firstname,$lastname, $company, $telephone,  $street, $city, $postcode,  $country, $state);
-    header('location: showdata.php');
 }
-// else if($g['outlet_name'] == $outletname) {
-//     var_dump("same Outlet NAme");
+// var_dump($g);
+
+// if ($check === NULL) {
+    // if ($toggle == true) {
+
+    //     $object->ins('project', ['status' => $status, 'email_id' => $email, 'outlet_name' => $outletname, 'admin_name' => $adminname]);
+    //     echo "Insert Result is : ";
+    //     // var_dump('id');
+    //     var_dump($object->getResult());
+
+    // } else if($toggle == false){
+    //     $object->insert('project', ['status' => $status, 'email_id' => $email, 'outlet_name' => $outletname, 'admin_name' => $adminname, 'first_name' => $firstname, 'last_name' => $lastname, 'company' => $company, 'telephone' => $telephone, 'street' => $street, 'city' => $city, 'postcode' => $postcode, 'country' => $country, 'state' => $state]);
+    //     echo "Insert Result is : ";
+    // }
+// } 
+// else if($check['outlet_name'] == $outletname) {
+//     // echo uniqid();
+//     $check = $object->upp('project', $status, $email, $outletname, $adminname,$firstname,$lastname, $company, $telephone,  $street, $city, $postcode,  $country, $state);
+//     header('location: showdata.php');
 // }
 
 

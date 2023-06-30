@@ -3,7 +3,7 @@ include 'database.php';
 
 $object = new database();
 
-
+// toggle switch on off  value edit page in set value in php
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +72,6 @@ $object = new database();
                   <div class="action-box">
                     <a href="from.php?id=<?php echo $value['id']; ?>">Edit</a>
                     <a name="delete" class="delete btn-danger" id="<?php echo $value['id']; ?>">Delete</a>
-                    <!-- <a href="#" class="delete" id="delete" data-id='<?= $id; ?>'>Delete</a> -->
-                    <!-- <a href="#" id="delete_button<?php echo $result->id; ?>" onclick="delete_row('<?php echo $result->id; ?>');">Delete</a> -->
                   </div>
                   </a>
                 </td>

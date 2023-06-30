@@ -59,6 +59,7 @@ class database
                 $id = array_push($this->result, $this->mysqli->insert_id);
                 echo "Submit insert";
                 echo "$id";
+                // echo uniqid();
                 return $id; // The data has been inserted
             } else {
                 array_push($this->result, $this->mysqli->error);
