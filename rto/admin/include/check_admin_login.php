@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: AI
- * Date: 07-07-2023
- * Time: 11:59
- */
+session_start();
+if (isset($_SESSION['id']) == false) {
+    $_SESSION['message'] = "Login Please";
+    header("location:adminlogin.php");
+    exit();
+}
+?>

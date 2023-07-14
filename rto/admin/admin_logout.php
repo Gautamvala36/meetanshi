@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: AI
- * Date: 07-07-2023
- * Time: 11:48
- */
+require_once("include/check_admin_login.php");
+unset($_SESSION['id']);
+$_SESSION['message'] = "Logout successfully";
+header("location:adminlogin.php");
+?>

@@ -97,7 +97,5 @@ $getdata = $connection->selectdata($page, $limit);
     $('.update').click(function () {
         location.href = "index.php?id=" + $(this).attr('id');
     })
-    $('a').click(function () {
-
-    });
+    
 </script>

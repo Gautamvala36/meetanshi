@@ -1,64 +1,58 @@
-<?php
-// Get the data from the AJAX request
-$name = $_POST['name'];
-$email = $_POST['email'];
-
-// Perform any necessary data validation or sanitization
-
-// Insert the data into the database
-// Replace 'your_table' with the actual table name and 'your_connection' with the database connection
-$query = "INSERT INTO your_table (name, email) VALUES ('$name', '$email')";
-$result = mysqli_query($your_connection, $query);
-
-if ($result) {
-  echo "Data inserted successfully";
-} else {
-  echo "Error inserting data";
-}
-?>
-
-
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form id="myForm">
-        <input type="text" name="name" placeholder="Name">
-        <input type="email" name="email" placeholder="Email">
-        <button type="submit">Submit</button>
-      </form>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-  $('#myForm').submit(function(e) {
-    e.preventDefault(); // Prevent the form from submitting normally
-
-    // Get the form data
-    var formData = $(this).serialize();
-
-    // Send AJAX request
-    $.ajax({
-      url: 'insert_data.php', // PHP script to handle the insertion
-      type: 'POST',
-      data: formData,
-      success: function(response) {
-        // Handle the response from the PHP script
-        console.log(response);
-        // You can display a success message or perform any other actions here
-      },
-      error: function(xhr, status, error) {
-        console.error(xhr.responseText);
-        // Handle the error in case the AJAX request fails
-      }
-    });
-  });
-});
-</script>
-</body>
+<html>
+  <head>
+    <title>Live Data Search with Pagination in PHP using Ajax</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
+  </head>
+  <body>
+    <br />
+    <div class="container">
+      <h3 align="center">Live Data Search with Pagination in PHP Mysql using Ajax</h3>
+      <br />
+      <div class="card">
+        <div class="card-header">Dynamic Data</div>
+        <div class="card-body">
+          <div class="form-group">
+            <input type="text" name="search_box" id="search_box" class="form-control" placeholder="Type your search query here" />
+          </div>
+          <div class="table-responsive" id="dynamic_content">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
+<script>
+  $(document).ready(function(){
+
+    load_data(1);
+
+    function load_data(page, query = '')
+    {
+      $.ajax({
+        url:"p1.php",
+        method:"POST",
+        data:{page:page, query:query},
+        success:function(data)
+        {
+          $('#dynamic_content').html(data);
+        }
+      });
+    }
+
+    $(document).on('click', '.page-link', function(){
+      var page = $(this).data('page_number');
+      var query = $('#search_box').val();
+      load_data(page, query);
+    });
+
+    $('#search_box').keyup(function(){
+      var query = $('#search_box').val();
+      load_data(1, query);
+    });
+
+  });
+</script>
