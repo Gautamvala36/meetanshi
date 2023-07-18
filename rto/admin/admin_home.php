@@ -2,8 +2,6 @@
 include "include/check_admin_login.php";
 include "include/connection.php";
 $connection = new connection();
-
-// $connection= $this->connection("SELECT  FROM user;");
 ?>
 <!doctype html>
 <html lang="en">
@@ -22,40 +20,36 @@ $connection = new connection();
 
 <body>
     <div class="container">
-        <div class="headar">
-            <nav class="sub-header">
-                <div class="logo">
-                    <span><img src="image/logo.png" alt=""></span>
-                </div>
-                <div class="sub-cat">
-                    <a href="admin_logout.php">
-                        <button type="submit" id="logout" class="logout">
-                            <span>Logout <i class="fa-solid fa-right-from-bracket fa-lg"></i></span>
-                        </button>
-                    </a>
-                </div>
-            </nav>
-        </div>
 
         <!-- side menu-->
         <div class="menu">
+
             <ul class="sub-menu">
+                <div class="logo">
+                    <span><img src="image/logo(2).png " alt=""></span>
+                </div>
                 <li class="dashboard " id="dashboard ">
-                    <a class="show" target="1"><i class="fa-solid fa-dashboard fa-lg"></i><span>Dashboard </span></a>
+                    <a class="show" id="tab1"><i class="fas fa-tachometer-alt fa-lg"></i><span>Dashboard </span></a>
                 </li>
                 <li class="Registerd" id="Registerd">
-                    <a class="show" target="2"><i class="fa-solid fa-users fa-lg"></i><span>Registerd</span></a>
+                    <a class="show" id="tab2"><i class="fa-solid fa-users fa-lg"></i><span>Registerd</span></a>
                 </li>
+
                 <li class="contactus" id="contactus">
-                    <a class="show" target="3"><i class="fa-sharp fa-solid fa-id-badge fa-lg"></i><span>Contact
+                    <a class="show" id="tab3"><i class="fa-sharp fa-solid fa-id-badge fa-lg"></i><span>Contact
                             Us</span> </a>
                 </li>
                 <li class="notification" id="notification">
-                    <a class="show" target="4"><i class="fa-solid fa-credit-card fa-lg"></i><span>Payment And Exam
+                    <a class="show" id="tab4"><i class="fa-solid fa-credit-card fa-lg"></i><span>Payment And Exam
                             Status</span></a>
                 </li>
                 <li class="request" id="request">
-                    <a class="show" target="5"><i class="fa-regular fa-message fa-lg"></i><span>Request</span> </a>
+                    <a class="show" id="tab5"><i class="fa-regular fa-message fa-lg"></i><span>Request</span> </a>
+                </li>
+                <li>
+                    <a href="admin_logout.php">
+                        <i class="fa-solid fa-right-from-bracket fa-lg"></i><span>Logout</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -63,145 +57,196 @@ $connection = new connection();
         <!--Show data-->
         <div class="contain">
             <div class="showdata">
-                <div id="div1" class="table">
+                <div id="tab1show" class="table">
                     <h2>Dashboard</h2>
                     <hr>
                     <br>
-                    <div class="dashboard">
-                        <div class="root">
+                    <div class="flex flex-wrap">
+                        <div class="box">
                             <div>
-                                <div class="c-dashboardInfo ">
-                                    <div class="wrap">
-                                        <h4 class="c-dashboardInfo__title">
-                                            Registerd User</h4><i class="fa-solid fa-user fa-2xl"></i>
-                                        <span class="c-dashboardInfo__count">
-                                            <?php 
+                                <!--Metric Card-->
+                                <div class="to-blue-100 border-b-4 rounded-lg shadow-xl p-5">
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex-shrink pr-4">
+                                            <div class="p-5 bg-blue-600 rounded-full"><i
+                                                    class="fas fa-users fa-2x fa-inverse"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-1 text-right md" style="padding-left: 43px;">
+                                            <h5 class="font-bold uppercase text-gray-600">Total User</h5>
+                                            <h3 class="font-bold text-3xl"> <?php 
                                             $getdata = $connection->countdata($count = '*',$tabel = 'user');
                                                     if ($getdata->num_rows > 0) {
                                                     while ($value = $getdata->fetch_assoc()) {
                                                     echo $value['COUNT(*)'];
-                                            ?>
-                                            <?php } }?>
-                                        </span>
+                                             } } ?>
+                                                <span class="text-blue-500"><i class="fas fa-caret-up"></i></span>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--/Metric Card-->
                             </div>
                             <div>
-                                <div class="c-dashboardInfo ">
-                                    <div class="wrap">
-                                        <h4 class="c-dashboardInfo__title">
-                                            User Request</h4><i class="fa-solid fa-user fa-2xl"></i> <span
-                                            class="c-dashboardInfo__count">
-                                            <?php 
+                                <!--Metric Card-->
+                                <div class="to-yellow-100 border-b-4 rounded-lg shadow-xl p-5">
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex-shrink pr-4">
+                                            <div class="p-5 bg-yellow-600 rounded-full"><i
+                                                    class="fa-solid fa-user-plus fa-2x fa-inverse"></i></div>
+                                        </div>
+                                        <div class="flex-1 text-right md" style="padding-left: 21px;">
+                                            <h5 class="font-bold uppercase text-gray-600">User Request</h5>
+                                            <h3 class="font-bold text-3xl"> <?php 
                                                     $getdata = $connection->countdata($count = '*',$tabel = 'user_request');
                                                     if ($getdata->num_rows > 0) {
                                                     while ($value = $getdata->fetch_assoc()) {
                                                     echo $value['COUNT(*)'];
                                             ?>
-                                            <?php } }?></span>
+                                                <?php } }?>
+                                                <span class="text-yellow-500"><i class="fas fa-caret-up"></i></span>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--/Metric Card-->
                             </div>
                             <div>
-                                <div class="c-dashboardInfo ">
-                                    <div class="wrap">
-                                        <h4 class="c-dashboardInfo__title">
-                                            Aceept Request</h4><i class="fa-solid fa-clipboard-check fa-2xl"></i> <span
-                                            class="c-dashboardInfo__count">
-                                            <?php 
+                                <!--Metric Card-->
+                                <div class="to-green-100 border-b-4 rounded-lg shadow-xl p-5">
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex-shrink pr-4">
+                                            <div class="p-5 bg-green-600 rounded-full"><i
+                                                    class="fa-solid fa-user-check fa-2x fa-inverse"></i></div>
+                                        </div>
+                                        <div class="flex-1 text-right md">
+                                            <h5 class="font-bold uppercase text-gray-600">Aceept Request</h5>
+                                            <h3 class="font-bold text-3xl"> <?php 
                                                 $getdata = $connection->count_data($count = 'status',$tabel = 'user',$where = 'Accept');
                                                 if ($getdata->num_rows > 0) {
                                                     while ($value = $getdata->fetch_assoc()) {
                                                         echo $value['COUNT(status)'];
                                             ?>
-                                            <?php } }?>
-                                        </span>
-                                        </span>
-                                        </span>
+                                                <?php } }?>
+                                                <span class="text-green-500"><i class="fas fa-caret-up"></i></span>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--/Metric Card-->
                             </div>
                         </div>
-                        <div class="root">
+                        <div class="box">
                             <div>
-                                <div class="c-dashboardInfo ">
-                                    <div class="wrap">
-                                        <h4 class="c-dashboardInfo__title">
-                                            Reject Request </h4><i class="fa-solid fa-user fa-2xl"></i>
-                                        <span class="c-dashboardInfo__count">
-                                            <?php 
+                                <!--Metric Card-->
+                                <div class="to-red-100 border-b-4 rounded-lg shadow-xl p-5">
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex-shrink pr-4">
+                                            <div class="p-5 bg-red-600 rounded-full"><i
+                                                    class="fa-solid fa-user-xmark fa-2x fa-inverse"></i></div>
+                                        </div>
+                                        <div class="flex-1 text-right md">
+                                            <h5 class="font-bold uppercase text-gray-600">Reject Request</h5>
+                                            <h3 class="font-bold text-3xl"> <?php 
                                                 $getdata = $connection->count_data($count = 'status',$tabel = 'user',$where = 'Reject');
                                                     if ($getdata->num_rows > 0) {
                                                     while ($value = $getdata->fetch_assoc()) {
                                                     echo $value['COUNT(status)'];
                                             ?>
-                                            <?php } }?>
-                                        </span>
+                                                <?php } }?>
+                                                <span class="text-red-500"><i class="fas fa-caret-up"></i></span>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--/Metric Card-->
                             </div>
                             <div>
-                                <div class="c-dashboardInfo ">
-                                    <div class="wrap">
-                                        <h4 class="c-dashboardInfo__title">
-                                            Pass Exam</h4><i class="fa-solid fa-user-check fa-2xl"></i> <span
-                                            class="c-dashboardInfo__count">
-                                            <?php 
+                                <!--Metric Card-->
+                                <div class="to-green-100 border-b-4 rounded-lg shadow-xl p-5">
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex-shrink pr-4">
+                                            <div class="p-5 bg-green-600 rounded-full"><i
+                                                    class="fa-solid fa-file-circle-check fa-2x fa-inverse"></i></div>
+                                        </div>
+                                        <div class="flex-1 text-right md" style="padding-left: 57px;">
+                                            <h5 class="font-bold uppercase text-gray-600">Pass Exam</h5>
+                                            <h3 class="font-bold text-3xl"> <?php 
                                                    $getdata = $connection->count_data($count = 'status',$tabel = 'userexam',$where = 'PASS');
                                                     if ($getdata->num_rows > 0) {
                                                     while ($value = $getdata->fetch_assoc()) {
                                                     echo $value['COUNT(status)'];
                                             ?>
-                                            <?php } }?></span>
+                                                <?php } }?>
+                                                <span class="text-green-500"><i class="fas fa-caret-up"></i></span>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--/Metric Card-->
                             </div>
                             <div>
-                                <div class="c-dashboardInfo ">
-                                    <div class="wrap">
-                                        <h4 class="c-dashboardInfo__title">
-                                        FAIL Exam</h4><i class="fa-solid fa-user-slash fa-2xl"></i> <span
-                                            class="c-dashboardInfo__count">
-                                            <?php 
-                                                $getdata = $connection->count_data($count = 'status',$tabel = 'userexam',$where = 'FAIL');
-                                                if ($getdata->num_rows > 0) {
+                                <!--Metric Card-->
+                                <div class="to-red-100 border-b-4 rounded-lg shadow-xl p-5">
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex-shrink pr-4">
+                                            <div class="p-5 bg-red-600 rounded-full"><i
+                                                    class="fa-solid fa-file-circle-xmark fa-2x fa-inverse"></i></div>
+                                        </div>
+                                        <div class="flex-1 text-right md" style="padding-left: 60px;">
+                                            <h5 class="font-bold uppercase text-gray-600">FAIL Exam</h5>
+                                            <h3 class="font-bold text-3xl"> <?php 
+                                                   $getdata = $connection->count_data($count = 'status',$tabel = 'userexam',$where = 'FAIL;');
+                                                    if ($getdata->num_rows > 0) {
                                                     while ($value = $getdata->fetch_assoc()) {
-                                                        echo $value['COUNT(status)'];
+                                                    echo $value['COUNT(status)'];
                                             ?>
-                                            <?php } }?>
-                                        </span>
-                                        </span>
-                                        </span>
+                                                <?php } }?>
+                                                <span class="text-red-500"><i class="fas fa-caret-up"></i></span>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--/Metric Card-->
                             </div>
                         </div>
-                        <div class="root">
+                        <div class="box">
                             <div>
-                                <div class="c-dashboardInfo ">
-                                    <div class="wrap">
-                                        <h4 class="c-dashboardInfo__title">
-                                        Exam Attend</h4><i class="fa-solid fa-user-pen fa-2xl"></i>
-                                        <span class="c-dashboardInfo__count">
-                                            <?php 
+                                <!--Metric Card-->
+                                <div class="to-grey-100 border-b-4 rounded-lg shadow-xl p-5">
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex-shrink pr-4">
+                                            <div class="p-5 bg-grey-600 rounded-full"><i
+                                                    class="fa-solid fa-user-pen fa-2x fa-inverse"></i></div>
+                                        </div>
+                                        <div class="flex-1 text-right md" style="padding-left: 26px;">
+                                            <h5 class="font-bold uppercase text-gray-600">Exam Attend</h5>
+                                            <h3 class="font-bold text-3xl"> <?php 
                                                 $getdata = $connection->countdata($count = '*',$tabel = 'userexam   ');
                                                     if ($getdata->num_rows > 0) {
                                                     while ($value = $getdata->fetch_assoc()) {
                                                     echo $value['COUNT(*)'];
                                             ?>
-                                            <?php } }?>
-                                        </span>
+                                                <?php } }?>
+                                                <span class="text-grey-500"><i class="fas fa-caret-up"></i></span>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--/Metric Card-->
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="div2" class="table">
+                <div id="tab2show" class="table">
                     <div class="Registerd_sraech">
                         <h2>Registerd</h2>
-                        <span class="search"><input type="text" name="query" class="text"> <button type="submit"
-                                value="search" name="search" class="datasearch">Submit</button></span>
+                        <span class="newform">
+                        <a href="registration.php" class="btn_1"><span>New Registration</span></a>
+                        <!-- <button type="submit"
+                                value="newform" name="newform" class="newsubmit">New Registration</button> -->
+                            </span>
+                                
                     </div>
                     <hr>
                     <br>
@@ -270,7 +315,7 @@ $connection = new connection();
                     <div>
                         <?php
 
-                    $data = $connection->pagination();
+                    $data = $connection->pagination($tabel='user');
 
                     if (mysqli_num_rows($data) > 0) {
                         $total_records = mysqli_num_rows($data);
@@ -296,7 +341,7 @@ $connection = new connection();
                     ?>
                     </div>
                 </div>
-                <div id="div3" class="table">
+                <div id="tab3show" class="table">
                     <h2>Contact Us</h2>
                     <hr>
                     <br>
@@ -356,9 +401,9 @@ $connection = new connection();
                         </tbody>
                     </table>
                     <div>
-                        <?php
+                    <?php
 
-                    $data = $connection->pagination();
+                    $data = $connection->pagination($tabel='contactus');
 
                     if (mysqli_num_rows($data) > 0) {
                         $total_records = mysqli_num_rows($data);
@@ -384,7 +429,7 @@ $connection = new connection();
                     ?>
                     </div>
                 </div>
-                <div id="div4" class="table">
+                <div id="tab4show" class="table">
                     <h2>Payment And Exam Status</h2>
                     <hr>
                     <br>
@@ -457,7 +502,7 @@ $connection = new connection();
                     <div>
                         <?php
 
-                    $data = $connection->pagination();
+                    $data = $connection->pagination($tabel='payment');
 
                     if (mysqli_num_rows($data) > 0) {
                         $total_records = mysqli_num_rows($data);
@@ -483,7 +528,7 @@ $connection = new connection();
                     ?>
                     </div>
                 </div>
-                <div id="div5" class="table">
+                <div id="tab5show" class="table">
                     <h2>Request</h2>
                     <hr>
                     <br>
@@ -538,7 +583,7 @@ $connection = new connection();
                     <div>
                         <?php
 
-                    $data = $connection->pagination();
+                    $data = $connection->pagination($tabel='user_request');
 
                     if (mysqli_num_rows($data) > 0) {
                         $total_records = mysqli_num_rows($data);
@@ -566,56 +611,9 @@ $connection = new connection();
                 </div>
             </div>
         </div>
-
     </div>
 
-    <script>
-    // select data in active
-    $(document).ready(function() {
-        $('ul li a').click(function() {
-            $('li a').removeClass("menu_select");
-            $(this).addClass("menu_select");
-        });
-    });
-
-    // hide and show data  multidic hide and show in
-    $(function() {
-        $('#div1').show();
-        $('.show').click(function() {
-            $('.table').hide('.showdata');
-            $('#div' + $(this).attr('target')).show();
-
-        });
-    });
-
-
-    //  accept user
-    $(document).ready(function() {
-        $('.accept').click(function() {
-            if (confirm("Registerd Status Request Accept")) {
-                console.log('hello');
-                location.href = "accept_user.php?id=" + $(this).attr('id');
-            }
-        });
-    });
-
-    //  reject user
-    $(document).ready(function() {
-        $('.reject').click(function() {
-            if (confirm("Registerd Status Request Reject")) {
-                console.log('hello');
-                location.href = "reject_user.php?id=" + $(this).attr('id');
-            }
-        });
-    });
-
-    // delete user 
-    $('.delete').click(function() {
-        if (confirm("User Message delete")) {
-            location.href = "delete_user.php?id=" + $(this).attr('id');
-        }
-    });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

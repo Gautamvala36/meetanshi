@@ -24,8 +24,7 @@ class connection
         return $result;
     }
 
-
-    //    select to user table data Registerd table
+    // select to user table data Registerd table
     public function selectdata($offset,$limt)
     {
         $query = "SELECT * FROM user ORDER BY id DESC  LIMIT {$offset},{$limt}";
@@ -34,7 +33,7 @@ class connection
         //        return json_encode($data);
     }
 
-    //    select to user table data Registerd table fulldata
+    // select to user table data Registerd table fulldata
     public function getdata($id)
     {
         $query = "SELECT * FROM user WHERE id = $id";
@@ -57,7 +56,6 @@ class connection
         return $data;
     }
 
-    
     // select in Request data show
     public function requestget($offset,$limt)
     {
@@ -66,18 +64,15 @@ class connection
         return $data;
     }
 
-
     // pagination in Registerd table
-    public function pagination()
+    public function pagination($tabel)
     {
-        $query = "SELECT * FROM user";
+        $query = "SELECT * FROM $tabel";
         $data = $this->conn->query($query);
         return $data;
     }
 
-    
     // Accept and Reject
-
     public function acceptuser($id)
     {
         $query = "UPDATE user SET status = 'Accept' WHERE id = $id";
@@ -108,9 +103,6 @@ class connection
         $query = "SELECT COUNT($count) FROM $table WHERE status = '$where'";
         return $this->conn->query($query);
     }
-
-
-
 }
 
 ?>
