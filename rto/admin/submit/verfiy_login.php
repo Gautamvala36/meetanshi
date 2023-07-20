@@ -1,9 +1,14 @@
 <?php
+
 session_start();
 include '../include/connection.php';
+
 $connection = new connection();
 
-//var_dump($check);
+//print_r($connection);
+
+//var_dump($connection);
+//exit;
 
 
 if (isset($_POST['login'])) {
@@ -25,8 +30,6 @@ if (isset($_POST['login'])) {
         header('Location: ../admin_home.php');
         exit;
     } else {
-//        $_SESSION["message"]='Invalid Email or Password';
-//        header("Location: ../adminlogin.php");
         header('location:../adminlogin.php?message=Invalid Email or Password');
     }
 
@@ -34,6 +37,5 @@ if (isset($_POST['login'])) {
 else{
     header('Location: ../adminlogin.php');
 }
-//session_destroy();
 
 ?>

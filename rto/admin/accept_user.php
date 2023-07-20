@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'include/connection.php';
 
 $id = $_GET['id'];
@@ -8,3 +8,11 @@ $connection = new connection();
 $data = $connection->acceptuser($id);
 header('location:admin_home.php');
 ?>
+
+
+<!-- <a href="accept_user.php?id=<?php echo $value['id'] ?> "> -->
+<!-- <button class="accept" id="<?php echo $value['id'] ?>" type="button">Accept</button> -->
+<!-- </a> -->
+<!-- <a href="reject_user.php?id=<?php echo $value['id'] ?>"> -->
+<!-- <button class="reject" type="button" id="<?php echo $value['id'] ?>">Reject</button> -->
+<!-- </a> -->

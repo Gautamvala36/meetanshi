@@ -1,4 +1,4 @@
-$("form").on("change", ".file-upload-field", function () {
+$("form").on("change", ".file-upload-field", function() {
     $(this).parent(".file-upload-wrapper").attr("data-text", $(this).val().replace(/.*(\/|\\)/, ''));
 });
 
@@ -32,7 +32,7 @@ $('form').submit(function () {
         validation = false;
     }
     else {
-        var nameValid = /^[A-Z][a-z]*\s[a-z]*\s[a-z]*$/;
+        var nameValid = /^[A-Z][a-z]*\s[A-z]*$/;
         if (!nameValid.test($('#fullname').val())) {
             $('#error_fullname').show();
             error_fullname = "*Full Name Not Valid";
@@ -46,7 +46,7 @@ $('form').submit(function () {
         validation = false;
     }
     else {
-        var nameValid = /^[A-Z][a-z]*\s[a-z]*\s[a-z]*$/;
+        var nameValid = /^[A-Z][a-z]*\s[A-z]*$/;
         if (!nameValid.test($('#fathername').val())) {
             $('#error_fathername').show();
             error_fathername = "*Father Name Not Valid";
@@ -241,4 +241,15 @@ $('form').submit(function () {
     $('#error_city').text(error_city);
     $('#error_pincode').text(error_pincode);
     return validation;
+
+    
 });
+
+function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}

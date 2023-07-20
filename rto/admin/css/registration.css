@@ -39,7 +39,9 @@ body {
     font-size: 25px;
     font-weight: 500;
     position: relative;
+    padding-top: 15px;
 }
+
 
 .container .title::before {
     content: "";
@@ -56,6 +58,11 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px 0 12px 0;
+}
+
+.message-body {
+    background: #d9d9d9;
+    padding: 6px;
 }
 
 /* inside the form user details */
@@ -101,10 +108,10 @@ form .gender__details .category {
     justify-content: space-between;
 }
 
-.gender__details .category label {
+/* .gender__details .category label {
     display: flex;
     align-items: center;
-}
+} */
 
 .gender__details .category .dot {
     height: 18px;
@@ -211,49 +218,70 @@ input[type=file]::file-selector-button:hover {
 }
 
 .radio-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 input[type="radio"] {
-  display: none;
+    display: none;
 }
 
-label {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
+.toggler {
+    margin: 2px;
+    width: 4%;
+    height: 18px;
 }
 
-label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border: 2px solid #007bff; /* Blue color */
-  border-radius: 50%;
+.pass_show {
+    cursor: pointer;
 }
 
-input[type="radio"]:checked + label:before {
-  background-color: #007bff;
+.close {
+    vertical-align: middle;
+    border: none;
+    color: inherit;
+    border-radius: 50%;
+    background: transparent;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    opacity: 0.6;
 }
 
-label:after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 50%;
-  transform: translateY(-50%) scale(0);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #fff;
+.close:focus,
+.close:hover {
+    opacity: 1;
+    background: rgba(128, 128, 128, 0.5);
 }
 
-input[type="radio"]:checked + label:after {
-  transform: translateY(-50%) scale(1);
+.close:active {
+    background: rgba(128, 128, 128, 0.9);
+}
+
+/* tines of the X */
+.close::before,
+.close::after {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    height: 20px;
+    width: 4px;
+    background-color: currentColor;
+    left: 17px;
+}
+
+.close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.col_se {
+    justify-content: end;
+    display: flex;
+    padding-bottom: 20px;
+    color: #000;
 }

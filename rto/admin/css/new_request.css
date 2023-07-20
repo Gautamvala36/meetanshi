@@ -1,0 +1,160 @@
+/* all */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --main-blue: rgba(113,183,230,1);
+    --main-purple: rgba(217,217,217,1);
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    /*center vertically */
+    align-items: center;
+    /* center horizontally */
+    background: linear-gradient(0deg, rgba(113,183,230,1) 0%, rgba(217,217,217,1) 100%);
+    padding: 10px;
+}
+
+/* container and form */
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+
+.container .title::before {
+    content: "";
+    position: absolute;
+    height: 3.5px;
+    width: 100px;
+    background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+    left: 0;
+    bottom: 0;
+}
+
+.container form .user__details {
+    margin: 20px 0 12px 0;
+}
+
+/* inside the form user details */
+form .user__details .input__box {
+    margin-bottom: 15px;
+}
+
+.user__details .input__box .details {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.user__details .input__box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--main-blue);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user__details .input__box input:focus,
+.user__details .input__box input:valid {
+    border-color: var(--main-blue);
+}
+
+/* submit button */
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(217,217,217,1)   0%, rgba(113,183,230,1) 100%);
+    transition: all 0.3s ease;
+}
+
+form .button input:hover {
+    background: linear-gradient(0deg, rgba(113,183,230,1) 0%, rgba(217,217,217,1) 100%);
+}
+
+.selecttag {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--main-blue);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.error {
+    padding: 3px 0px 0px 10px;
+    display: none;
+    color: red;
+}
+
+.close {
+    vertical-align: middle;
+    border: none;
+    color: inherit;
+    border-radius: 50%;
+    background: transparent;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    opacity: 0.6;
+}
+.close:focus,
+.close:hover {
+    opacity: 1;
+    background: rgba(128, 128, 128, 0.5);
+}
+.close:active {
+    background: rgba(128, 128, 128, 0.9);
+}
+/* tines of the X */
+.close::before,
+.close::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 20px;
+    width: 4px;
+    background-color: currentColor;
+}
+.close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
