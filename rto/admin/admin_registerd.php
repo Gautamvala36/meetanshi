@@ -75,7 +75,7 @@ $connection = new connection();
                 echo '<td colspan="7" style="text-align: center;">Data Not Found</td>';
             }
             ?>
-            <div id></div>
+            <div id="get_data"></div>
         </tbody>
     </table>
 </div>
@@ -406,8 +406,27 @@ $connection = new connection();
 
 
 
+<script>
+    function fetch_data(page){
+        $.ajax({
+            url : 'pagination.php',
+            method : 'POST',
+            data :{
+                page : page
+            },
+            success: function (data) {
+                $('#get_data').html(data);
+            }
+        });
+    }
+    fetch_data();
 
-
+    $(document).on('click','.page-item',function (){
+        var page = $(this).attr('id');
+        fetch_data(page);
+    });
+</script>
+<script src="js/pagination.js"></script>
 <script src="js/adminscript.js"></script>
 <!-- <script src="js/agecalulate.js"></script> -->
 

@@ -10,10 +10,11 @@ $connection = new connection();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <title>Admin</title>
+    <script src="js/stateselect.js"></script>
 </head>
 
 <body>
@@ -25,23 +26,23 @@ $connection = new connection();
                 <div class="logo">
                     <span><img src="image/logo(2).png " alt=""></span>
                 </div>
-                <li class="dashboard " id="dashboard ">
-                    <a class="show" id="tab1"><i class="fas fa-tachometer-alt fa-lg"></i><span>Dashboard </span></a>
+                <li class="dashboard " id="dashboard">
+                    <a class="show" id="tab1" data-page="admin_dashboard"><i class="fas fa-tachometer-alt fa-lg"></i><span>Dashboard </span></a>
                 </li>
                 <li class="Registerd" id="Registerd">
-                    <a class="show" id="tab2"><i class="fa-solid fa-users fa-lg"></i><span>Registerd</span></a>
+                    <a class="show" id="tab2" data-page="admin_registerd"><i class="fa-solid fa-users fa-lg"></i><span>Registerd</span></a>
                 </li>
 
                 <li class="contactus" id="contactus">
-                    <a class="show" id="tab3"><i class="fa-sharp fa-solid fa-id-badge fa-lg"></i><span>Contact
+                    <a class="show" id="tab3" data-page="admin_contactus"><i class="fa-sharp fa-solid fa-id-badge fa-lg"></i><span>Contact
                             Us</span> </a>
                 </li>
-                <li class="notification" id="notification">
-                    <a class="show" id="tab4"><i class="fa-solid fa-credit-card fa-lg"></i><span>Payment And Exam
+                <li class="payment" id="payment">
+                    <a class="show" id="tab4" data-page="admin_payment"><i class="fa-solid fa-credit-card fa-lg"></i><span>Payment And Exam
                             Status</span></a>
                 </li>
                 <li class="request" id="request">
-                    <a class="show" id="tab5"><i class="fa-regular fa-message fa-lg"></i><span>Request</span> </a>
+                    <a class="show" id="tab5" data-page="admin_request"><i class="fa-regular fa-message fa-lg"></i><span>Request</span> </a>
                 </li>
                 <li>
                     <a href="admin_logout.php">
@@ -54,7 +55,7 @@ $connection = new connection();
         <!--Show data-->
         <div class="contain">
             <div class="showdata">
-                <div id="tab1show" class="table">
+                <div id="tab1show" class="table dashboard">
                     <h2>Dashboard</h2>
                     <hr>
                     <br>
@@ -198,10 +199,12 @@ $connection = new connection();
                                             <h5 class="font-bold uppercase text-gray-600">FAIL Exam</h5>
                                             <h3 class="font-bold text-3xl">
                                                 <?php
-                                                $getdata = $connection->count_data($count = 'status', $tabel = 'userexam', $where = 'FAIL;');
+                                                $getdata = $connection->count_data($count = 'status', $tabel = 'userexam', $where = 'Fail');
                                                 if ($getdata->num_rows > 0) {
                                                     while ($value = $getdata->fetch_assoc()) {
+                                                        // var_dump($value);
                                                         echo $value['COUNT(status)'];
+
                                                 ?>
                                                 <?php }
                                                 } ?>
@@ -267,259 +270,15 @@ $connection = new connection();
                         </div>
                     </div>
                 </div>
-                <div id="tab2show" class="table">
-                <div class="request_send">
-                        <h2>Registerd</h2>
-                        <span>
-                            <a href="registration.php">
-                                <button class="button-89" role="button">New Registration</button>
-                            </a>
-                        </span>
-                    </div>
-                    <hr>
-                    <br>
-                    <table class="hidden">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Application No</th>
-                                <th>Full Name</th>
-                                <th>Status</th>
-                                <th>Photo</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-
-                            $getdata = $connection->selectdata();
-                            if ($getdata->num_rows > 0) {
-                                while ($value = $getdata->fetch_assoc()) {
-                                    // var_dump($value['photo']);
-                            ?>
-                                    <tr>
-                                        <td>
-                                            <?= $value['id'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $value['application_no'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['fullname'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['status'] ?>
-                                        </td>
-                                        <td><img src="image/<?= $value['photo'] ?>" width="61px" height="51px" alt=""></td>
-                                        <td class=".btn">
-                                            <a href="user_details.php?id=<?php echo $value['id'] ?>">
-                                                <button class="viewdata" type="submit">View Data</button>
-                                            </a>
-                                            <button class="update" id="<?php echo $value['id'] ?>" type="button">Edit</button>
-                                            <button class="delete" type="button" id="<?php echo $value['id'] ?>">Delete</button>
-
-                                        </td>
-                                    </tr>
-                            <?php
-                                }
-                            } else {
-                                echo '<td colspan="7" style="text-align: center;">Data Not Found</td>';
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="tab3show" class="table">
-                    <h2>Contact Us</h2>
-                    <hr>
-                    <br>
-                    <table class="hidden">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Message</th>
-                                <th>Data</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-
-                            $contactget = $connection->contactget();
-                            if ($contactget->num_rows > 0) {
-                                while ($value = $contactget->fetch_assoc()) {
-                            ?>
-                                    <tr>
-                                        <td>
-                                            <?= $value['id'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $value['name'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['email'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['message'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo date('d-m-Y  h:i:s a', strtotime($value['date'])) ?>
-                                        </td>
-                                        <td class=".btn">
-                                            <!-- <a href="user_details.php?id=<?php echo $value['id'] ?>"> -->
-                                            <button class="delete" type="button" id="<?php echo $value['id'] ?>">Delete</button>
-                                            <!-- </a> -->
-                                        </td>
-                                    </tr>
-                            <?php
-                                }
-                            } else {
-                                echo '<td colspan="6" style="text-align: center;">Data Not Found</td>';
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-
-                </div>
-                <div id="tab4show" class="table">
-                    <h2>Payment And Exam Status</h2>
-                    <hr>
-                    <br>
-                    <div style="overflow-x: auto;width: 125%;">
-                        <table class="hidden" style="width: 123%;">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Application No</th>
-                                    <th>Email</th>
-                                    <th>Payment Type</th>
-                                    <th>Mobile/Card Number</th>
-                                    <th>Status</th>
-                                    <th>Payment Date</th>
-                                    <th>Exam Status</th>
-                                    <th>Exam Data</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $contactget = $connection->paymetexam();
-                                if ($contactget->num_rows > 0) {
-                                    while ($value = $contactget->fetch_assoc()) {
-                                ?>
-                                        <tr>
-                                            <td>
-                                                <?= $value['id'] ?>
-                                            </td>
-                                            <td>
-                                                <?= $value['application_no'] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $value['email'] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $value['payment_type'] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $value['number'] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $value['status'] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo date('d-m-Y  h:i:s a', strtotime($value['payment_date'])) ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $value['examstatus'] ?>
-                                            </td>
-                                            <td>
-                                                <?php echo date('d-m-Y  h:i:s a', strtotime($value['examdate'])) ?>
-                                            </td>
-                                        </tr>
-                                <?php
-                                    }
-                                } else {
-                                    echo '<td colspan="9" style="text-align: center;">Data Not Found</td>';
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div id="tab5show" class="table">
-                    <div class="request_send">
-                        <h2>Request</h2>
-                        <span>
-                            <a href="new_request.php">
-                                <button class="button-89" role="button">New Request</button>
-                            </a>
-                        </span>
-                    </div>
-                    <hr>
-                    <br>
-                    <table class="hidden">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Application No</th>
-                                <th>Email</th>
-                                <th>User Request</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-
-                            $requestget = $connection->selectdata();
-                            if ($requestget->num_rows > 0) {
-                                while ($value = $requestget->fetch_assoc()) {
-                                    // var_dump($value);
-                            ?>
-                                    <tr>
-                                        <td>
-                                            <?= $value['id'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $value['application_no'] ?>
-                                        </td>
-                                        <td>
-                                            <?= $value['email'] ?>
-                                        </td>
-                                        <td>
-                                            <?php if ($value['license_type'] == 1) {
-                                                echo 'Learners License';
-                                            } else {
-                                                echo 'Driving License';
-                                            }
-                                            ?>
-                                        </td>
-                                        <td>
-                                            <?= $value['status'] ?>
-                                        </td>
-                                        <td>
-                                            <!-- <a href="accept_user.php?id=<?php echo $value['id'] ?> "> -->
-                                            <button class="accept" id="<?php echo $value['id'] ?>" type="button">Accept</button>
-                                            <!-- </a> -->
-                                            <!-- <a href="reject_user.php?id=<?php echo $value['id'] ?>"> -->
-                                            <button class="reject" type="button" id="<?php echo $value['id'] ?>">Reject</button>
-                                            <!-- </a> -->
-                                        </td>
-                                    </tr>
-                            <?php
-                                }
-                            } else {
-                                echo '<td colspan="6" style="text-align: center;">Data Not Found</td>';
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
     </div>
+
     <script src="js/adminscript.js"></script>
+    <script src="js/registration.js"></script>
+    <script src="js/payment.js"></script>
+
+    <!-- <script src="js/agecalulate.js"></script>-->
 </body>
 
 </html>

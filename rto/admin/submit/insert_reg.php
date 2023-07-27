@@ -2,10 +2,10 @@
 
 require_once('../include/connection.php');
 $connection = new connection();
-// var_dump($_POST);
+var_dump($_POST);
 
 
-$id = $_POST['id'];
+$id = $_POST['userid'];
 $application_no = $_POST['application_no'];
 // var_dump($application_no);
 $filename = $_FILES["imageupload"]["name"];
@@ -56,7 +56,7 @@ if ($application_no && $filename && $fullname && $fathername && $gender && $dob 
             header('location:../admin_home.php');
         } catch (Exception $e) {
             echo $e;
-            header('location:../registration.php?error=Email Id and Aadher Card Number Already Available');
+            header('location:../admin_home.php?error=Email Id and Aadher Card Number Already Available');
         }
     }
 }

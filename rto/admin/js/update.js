@@ -13,12 +13,12 @@ $("body").on("click", ".update", function(e) {
         success: function(response) {
             var data = JSON.parse(response);
             console.log(data);
-            // $("input[name='fullname']").val(data.fullname);
-            // $("#name").val(data.name);
+            // $("#application_no").val(data['application_no']);
+            // $("#fullname").val(data.fullname);
             // $("#email").val(data.email);
             // $("#username").val(data.username);
             // $("#dob").val(data.dob);
-            location.href = "update_reg.php";
+            // location.href = "update_reg.php";
         }
     });
     

@@ -16,16 +16,19 @@ $connection = new connection();
     <title>Edit Form</title>
 </head>
 <?php
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+// if (isset($_GET['id'])) {
+    // $id = $_GET['id'];
 
-    $get = $connection->getdata($id);
+    // $get = $connection->getdata($id);
     // var_dump($get);
-}
+// }
 ?>
 
 <body>
-    <div class="container">
+    <div class="container_regis">
+        <a class="col_se" href="admin_home.php">
+            <button class="close" aria-label="Close"></button>
+        </a>
         <div class="message-body">
             <p>User Is Email Id And Aadhar Card Number Is Only One Account Create.</p>
         </div>
@@ -36,18 +39,18 @@ if (isset($_GET['id'])) {
         ?>
         <p id="ages" style="color: red; font-size: 20px;"></p>
         <form action="submit/insert_reg.php" method="post" class="form" enctype="multipart/form-data">
-           
-            <input type='hidden' value='<?php echo $id ?>' name='id' id=''/>    
-           <div style="justify-content: end; display: flex;">
-           <label for="">Application NO : <?= $get['application_no'] ?>
-                <input type="text" name="application_no" value="<?= $get['application_no'] ?>" style="display: none;">
-            </label>
-           </div>
+
+            <input type='hidden' value='<?php echo $id ?>' name='id' id='' />
+            <div style="justify-content: end; display: flex;">
+                <label for="">Application NO : <?= $get['application_no'] ?>
+                    <input type="text" name="application_no" value="<?= $get['application_no'] ?>" style="display: none;">
+                </label>
+            </div>
 
             <div class="user__details">
                 <div class="input__box">
                     <span class="details">Full Name</span>
-                    <input type="text" id="fullname" class="fullname" name="fullname" value="<?= $get['fullname'] ?>"  placeholder="Enter Full Name">
+                    <input type="text" id="fullname" class="fullname" name="fullname" value="<?= $get['fullname'] ?>" placeholder="Enter Full Name">
                 </div>
                 <div class="input__box">
                     <span class="details">Father Name</span>
@@ -71,7 +74,7 @@ if (isset($_GET['id'])) {
                     <span class="details">Blood Group</span>
                     <select class="selecttag" id="bloodgroup" name="bloodgroup">
                         <option>Select Blood Group</option>
-                        <option value="A+"<?php if ($get['bloodgroup'] == 'A+') { ?> selected="selected" <?php } ?>>A+</option>
+                        <option value="A+" <?php if ($get['bloodgroup'] == 'A+') { ?> selected="selected" <?php } ?>>A+</option>
                         <option value="A-" <?php if ($get['bloodgroup'] == 'A-') { ?> selected="selected" <?php } ?>>A-</option>
                         <option value="B+" <?php if ($get['bloodgroup'] == 'B+') { ?> selected="selected" <?php } ?>>B+</option>
                         <option value="B-" <?php if ($get['bloodgroup'] == 'B-') { ?> selected="selected" <?php } ?>>B-</option>

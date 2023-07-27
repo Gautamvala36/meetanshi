@@ -26,9 +26,9 @@ class connection
 
 
     //    select to user table data Registerd table
-    public function selectdata()
+    public function selectdata($table)
     {
-        $query = "SELECT * FROM user";
+        $query = "SELECT * FROM $table";
         $data = $this->conn->query($query);
         return $data;
         //        return json_encode($data);
@@ -53,7 +53,7 @@ class connection
     // select in paymetn and exam data show
     public function paymetexam()
     {
-        $query = "SELECT p.*,u.status AS examstatus,u.examdate FROM payment p INNER JOIN userexam u WHERE p.id = u.id";
+        $query = "SELECT p.*,u.status AS examstatus,u.examdate FROM payment p INNER JOIN userexam u WHERE p.application_no = u.application_no";
         $data = $this->conn->query($query);
         return $data;
     }
@@ -67,14 +67,6 @@ class connection
         return $data;
     }
 
-
-    // pagination in Registerd table
-    // public function pagination($tabel)
-    // {
-    //     $query = "SELECT * FROM user $tabel";
-    //     $data = $this->conn->query($query);
-    //     return $data;
-    // }
 
     // Accept and Reject
 
@@ -117,6 +109,20 @@ class connection
         return $this->conn->query($query);
     }
 
+    // request table in count user request
+    public function count_req($id)
+    {
+        $query = "SELECT COUNT(a.application_no)as count FROM user_request a inner join user b on a.application_no = b.id where b.id=".$id;
+        $result = $this->conn->query($query);
+        $requestsByUser = array();
+        while ($row = $result->fetch_assoc()) {
+            $userId = $row['application_no'];
+            $requestCount = $row['count'];
+            $requestsByUser[$userId] = $requestCount;
+        }
+        return $requestsByUser;
+    }
+
     // admin registration 
 
     public function reg_insert($application_no, $filename, $fullname, $fathername, $gender, $dob, $bloodgroup, $p_number, $email, $password, $aadhar_number, $license_type, $address1, $address2, $state, $district, $city, $pincode, $status)
@@ -136,16 +142,46 @@ class connection
     }
 
     // new request insert 
-    public function request_send($application_no,$email,$request)
+    public function request_send($application_no, $email, $request)
     {
-        // INSERT INTO user_request  SELECT id, application_on FROM user CROSS JOIN student WHERE course.name = 'K01' AND student.name = 'Duy';
         // try {
-            $query = "INSERT INTO user_request VALUES('$application_no','$email','$request') WHERE ";
-            var_dump($query);
-            return $this->conn->query($query);
+        $query = "INSERT INTO user_request VALUES(NULL,'$application_no','$email','$request',CURRENT_TIMESTAMP)";
+        var_dump($query);
+        return $this->conn->query($query);
         // } catch (Exception $e) {
-            // echo $e;
+        // echo $e;
         // }
+    }
+
+    // paymnet user insert and check exam 
+    public function payment_insert($application_no,$email,$payment,$number,$fees,$status,$date)
+    {
+        $query = "INSERT INTO payment VALUES(NULL,'$application_no','$email','$payment','$number','$fees','$status','$date',CURRENT_TIMESTAMP)";
+        var_dump($query);
+        return $this->conn->query($query);
+    }
+
+    public function exam_check($application_no,$email)
+    {
+        $query = "SELECT * FROM payment WHERE application_no = '$application_no' AND email = '$email'";
+        return $this->conn->query($query);
+
+    }
+
+    public function selec_exam($table)
+    {
+        $query = "SELECT * FROM payment ORDER BY application_no DESC LIMIT 1";
+        $data = $this->conn->query($query);
+        $row = $data->fetch_assoc();
+        return $row;
+    }
+
+    // insert userexam in status
+    public function user_exam_status($application_no,$email,$res)
+    {
+        $query = "INSERT INTO userexam VALUES(NULL,'$application_no','$email','$res',CURRENT_TIMESTAMP)";
+        // var_dump($query);
+        return $this->conn->query($query);
     }
 
 }

@@ -11,8 +11,8 @@ $email = $_POST['email'];
 $request = $_POST['request'];
 
 $var = $connection->request_send($application_no,$email,$request);
-var_dump($var);
-// header('location:../admin_home.php');
+// var_dump($var);
+header('location:../admin_home.php');
 
 
 ?>

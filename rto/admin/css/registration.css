@@ -1,11 +1,12 @@
 /* all */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Roboto';
 }
 
 :root {
@@ -15,27 +16,26 @@
     --sub-grey: #d9d9d9;
 }
 
-body {
+.body_regis {
     display: flex;
     /* height: 100vh; */
     justify-content: center;
     /*center vertically */
     align-items: center;
     /* center horizontally */
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
     padding: 10px;
 }
 
 /* container and form */
-.container {
+.container_regis {
     max-width: 700px;
     width: 100%;
-    background: #fff;
+    background: rgb(245, 245, 245);
     padding: 25px 30px;
     border-radius: 5px;
 }
 
-.container .title {
+.container_regis .title {
     font-size: 25px;
     font-weight: 500;
     position: relative;
@@ -43,7 +43,7 @@ body {
 }
 
 
-.container .title::before {
+.contcontainer_regisainer .title::before {
     content: "";
     position: absolute;
     height: 3.5px;

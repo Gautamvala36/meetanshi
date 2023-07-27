@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'include/connection.php';
 $connection = new connection();
 ?>
@@ -9,8 +9,7 @@ $connection = new connection();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="js/stateselect.js"></script>
     <link rel="stylesheet" href="css/registration.css">
     <title>New Registration</title>
@@ -18,8 +17,8 @@ $connection = new connection();
 
 
 
-<body>
-    <div class="container">
+<div class="body_regis">
+    <div class="container_regis">
         <a class="col_se" href="admin_home.php">
             <button class="close" aria-label="Close"></button>
         </a>
@@ -27,14 +26,13 @@ $connection = new connection();
             <p>User Is Email Id And Aadhar Card Number Is Only One Account Create.</p>
         </div>
         <div class="title">Registration</div>
-        <?php if (isset($_GET['error']))
-        {
-            echo $_GET['error'].'<span style="color: red; font-size: 20px;">&times;</span>';
+        <?php if (isset($_GET['error'])) {
+            echo $_GET['error'] . '<span style="color: red; font-size: 20px;">&times;</span>';
         }
         ?>
         <p id="ages" style="color: red; font-size: 20px;"></p>
         <form action="submit/insert_reg.php" method="post" class="form" enctype="multipart/form-data">
-            <input type="hidden" name="application_no" value="<?php echo (rand(100009, 999999));?>">
+            <input type="hidden" name="application_no" value="<?php echo (rand(100009, 999999)); ?>">
             <div class="user__details">
                 <div class="input__box">
                     <span class="details">Full Name</span>
@@ -42,8 +40,7 @@ $connection = new connection();
                 </div>
                 <div class="input__box">
                     <span class="details">Father Name</span>
-                    <input type="text" id="fathername" class="fathername" name="fathername"
-                        placeholder="Enter Father Name">
+                    <input type="text" id="fathername" class="fathername" name="fathername" placeholder="Enter Father Name">
                 </div>
                 <div class="input__box">
                     <span class="details">Gender </span>
@@ -102,8 +99,7 @@ $connection = new connection();
                 </div>
                 <div class="input__box">
                     <span class="details">Aadhar Number</span>
-                    <input type="text" class="aadhar_number" id="aadhar_number" name="aadhar_number"
-                        placeholder="0000 0000 0000">
+                    <input type="text" class="aadhar_number" id="aadhar_number" name="aadhar_number" placeholder="0000 0000 0000">
                 </div>
                 <div class="input__box">
                     <span class="details">Address Line 2</span>
@@ -173,14 +169,7 @@ $connection = new connection();
         </form>
 
     </div>
-    <script>
-
-    </script>
-    <script src="js/registration.js"></script>
-    <script src="js/agecalulate.js"></script>
-    <script language="javascript">
-    print_state("sts");
-    </script>
-</body>
+    
+</div>
 
 </html>

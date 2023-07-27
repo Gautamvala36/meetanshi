@@ -1,46 +1,43 @@
 /* all */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    /* margin: 0; */
+    /* padding: 0; */
+    /* box-sizing: border-box; */
+    font-family: 'Roboto';
 }
 
 :root {
-    --main-blue: rgba(113,183,230,1);
-    --main-purple: rgba(217,217,217,1);
+    --main-blue: rgba(113, 183, 230, 1);
+    --main-purple: rgba(217, 217, 217, 1);
 }
 
-body {
+.body_request {
     display: flex;
     height: 100vh;
     justify-content: center;
-    /*center vertically */
-    align-items: center;
-    /* center horizontally */
-    background: linear-gradient(0deg, rgba(113,183,230,1) 0%, rgba(217,217,217,1) 100%);
-    padding: 10px;
 }
 
-/* container and form */
-.container {
+/* container_new_request and form */
+.container_new_request {
     max-width: 600px;
     width: 100%;
-    background: #fff;
+    background: rgb(245, 245, 245);
     padding: 25px 30px;
     border-radius: 5px;
 }
 
-.container .title {
+.container_new_request .title {
     font-size: 25px;
     font-weight: 500;
     position: relative;
+    padding-top: 15px;
 }
 
 
-.container .title::before {
+.container_new_request .title::before {
     content: "";
     position: absolute;
     height: 3.5px;
@@ -50,7 +47,7 @@ body {
     bottom: 0;
 }
 
-.container form .user__details {
+.container_new_request form .user__details {
     margin: 20px 0 12px 0;
 }
 
@@ -67,7 +64,7 @@ form .user__details .input__box {
 
 .user__details .input__box input {
     height: 45px;
-    width: 100%;
+    width: 97%;
     outline: none;
     border-radius: 5px;
     border: 1px solid var(--main-blue);
@@ -96,12 +93,12 @@ form .button input {
     font-size: 18px;
     font-weight: 500;
     border-radius: 5px;
-    background: linear-gradient(0deg, rgba(217,217,217,1)   0%, rgba(113,183,230,1) 100%);
+    background: linear-gradient(0deg, rgba(217, 217, 217, 1) 0%, rgba(113, 183, 230, 1) 100%);
     transition: all 0.3s ease;
 }
 
 form .button input:hover {
-    background: linear-gradient(0deg, rgba(113,183,230,1) 0%, rgba(217,217,217,1) 100%);
+    background: linear-gradient(0deg, rgba(113, 183, 230, 1) 0%, rgba(217, 217, 217, 1) 100%);
 }
 
 .selecttag {
@@ -133,14 +130,17 @@ form .button input:hover {
     height: 32px;
     opacity: 0.6;
 }
+
 .close:focus,
 .close:hover {
     opacity: 1;
     background: rgba(128, 128, 128, 0.5);
 }
+
 .close:active {
     background: rgba(128, 128, 128, 0.9);
 }
+
 /* tines of the X */
 .close::before,
 .close::after {
@@ -152,9 +152,11 @@ form .button input:hover {
     width: 4px;
     background-color: currentColor;
 }
+
 .close::before {
     transform: translate(-50%, -50%) rotate(45deg);
 }
+
 .close::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }

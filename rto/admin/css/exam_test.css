@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+
+}
+
+
+.container {
+    width: 100%;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.details {
+    background-color: #d9d9d9;
+    height: 190px;
+}
+
+.headar {
+    margin: 0 auto;
+    width: 10%;
+    height: 50px;
+}
+
+.user_detail {
+    padding: 10px 0 0 50px;
+    /* display: inline-flex; */
+}
+
+.deta {
+    font-weight: 800;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.lable {
+
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.examform{
+    background: #f1f1f1;
+    padding: 20px 0px 0px 50px;
+    /* font-size: 20px; */
+}
+
+.exam>span{
+    font-size: 26px;
+}
+
+input[type=radio] {
+    height: 1.2em;
+    width: 38px;
+}
+
+.option{
+    padding-left: 9px;
+}
+
+.button-89 {
+    --b: 3px;
+    /* border thickness */
+    --s: 0.65em;
+    /* size of the corner */
+    color: #373B44;
+
+    padding: calc(.0em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    background: #555;
+    color: white;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: black;
+    outline-offset: .05em;
+    background: #E6E6E6;
+    color: black;
+}
+
+.button-89:active {
+    background: var(--color);
+    color: #fff;
+}
