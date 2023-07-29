@@ -31,8 +31,24 @@ class connection
         $query = "SELECT * FROM $table";
         $data = $this->conn->query($query);
         return $data;
-        //        return json_encode($data);
     }
+
+    // pagination registration 
+
+    public function pagination_selectdata($table,$offset,$limit_per_page)
+    {
+        $query = "SELECT * FROM $table LIMIT $offset,$limit_per_page";
+        $data = $this->conn->query($query);
+        return $data;
+    }
+
+    public function count_records($table = 'user') {
+        $sql = "SELECT COUNT(*) AS total FROM $table";
+        $result = $this->conn->query($sql);
+        $row = $result->fetch_assoc();
+        return (int) $row['total']; // Convert the total count to an integer
+    }
+
 
 
     //    select to user table data Registerd table fulldata

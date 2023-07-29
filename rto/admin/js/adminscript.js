@@ -117,6 +117,7 @@ $('.delete').click(function () {
 
 
 // registration click 
+// $('.hidden').show();
 $("body").on("click", "#registration", function (e) {
     e.preventDefault();
     $(".body_regis").show();

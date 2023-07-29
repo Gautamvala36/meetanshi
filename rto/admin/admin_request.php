@@ -17,55 +17,57 @@ error_reporting(0);
     </div>
     <hr>
     <br>
-    <table class="hidden" id="newrequest">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Application No</th>
-                <th>Email</th>
-                <th>User Request</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
+    <div class="hidden" id="newrequest">
+        <div id="sampleTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Application No</th>
+                        <th>Email</th>
+                        <th>User Request</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
 
             $requestget = $connection->selectdata($table = 'user');
             if ($requestget->num_rows > 0) {
                 while ($value = $requestget->fetch_assoc()) {
                     // var_dump($value);
             ?>
-            <tr>
-                <td>
-                    <?= $value['id'] ?>
-                </td>
-                <td>
-                    <?= $value['application_no'] ?>
-                </td>
-                <td>
-                    <?= $value['email'] ?>
-                </td>
-                <td>
-                    <?php if ($value['license_type'] == 1) {
+                    <tr>
+                        <td>
+                            <?= $value['id'] ?>
+                        </td>
+                        <td>
+                            <?= $value['application_no'] ?>
+                        </td>
+                        <td>
+                            <?= $value['email'] ?>
+                        </td>
+                        <td>
+                            <?php if ($value['license_type'] == 1) {
                                 echo 'Learners License';
                             } else {
                                 echo 'Driving License';
                             }
                             ?>
-                    <?php
+                            <?php
                             $requestsByUser = $connection->count_req($value['id']);
                             foreach ($requestsByUser as $userId => $requestCount) {
                                 // var_dump($requestCount)
                             ?>
-                    <span>(<?php echo $requestCount; ?>)
-                    </span>
-                    <?php
+                            <span>(<?php echo $requestCount; ?>)
+                            </span>
+                            <?php
                             }
                             ?>
-                </td>
-                <td>
-                    <?php
+                        </td>
+                        <td>
+                            <?php
                             if ($value['status'] == 'Pending') {
                                 echo '<span style="color:blue"> Pending </span>';
                             } elseif ($value['status'] == 'Accept') {
@@ -76,25 +78,29 @@ error_reporting(0);
                             ?>
 
 
-                </td>
-                <td>
-                    <!-- <a href="accept_user.php?id=<?php echo $value['id'] ?> "> -->
-                    <button class="accept" id="<?php echo $value['id'] ?>" type="button">Accept</button>
-                    <!-- </a> -->
-                    <!-- <a href="reject_user.php?id=<?php echo $value['id'] ?>"> -->
-                    <button class="reject" type="button" id="<?php echo $value['id'] ?>">Reject</button>
-                    <!-- </a> -->
-                </td>
-            </tr>
-            <?php
+                        </td>
+                        <td>
+                            <!-- <a href="accept_user.php?id=<?php echo $value['id'] ?> "> -->
+                            <button class="accept" id="<?php echo $value['id'] ?>" type="button">Accept</button>
+                            <!-- </a> -->
+                            <!-- <a href="reject_user.php?id=<?php echo $value['id'] ?>"> -->
+                            <button class="reject" type="button" id="<?php echo $value['id'] ?>">Reject</button>
+                            <!-- </a> -->
+                        </td>
+                    </tr>
+                    <?php
                 }
             } else {
                 echo '<td colspan="6" style="text-align: center;">Data Not Found</td>';
             }
             ?>
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
 </div>
+
 
 <div class="body_request" style="display: none;">
     <div class="container_new_request">

@@ -9,6 +9,7 @@ $connection = new connection();
 <script src="js/registration.js"></script>
 <script src="js/stateselect.js"></script>
 
+
 <!--Show data-->
 <div id="tab2show" class="table">
     <div class="request_send">
@@ -21,64 +22,68 @@ $connection = new connection();
     </div>
     <hr>
     <br>
-    <table class="hidden">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Application No</th>
-                <th>Full Name</th>
-                <th>Status</th>
-                <th>Photo</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
+    <div id="show_reg">
+        <table class="hidden">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Application No</th>
+                    <th>Full Name</th>
+                    <th>Status</th>
+                    <th>Photo</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
 
             $getdata = $connection->selectdata($table = 'user');
             if ($getdata->num_rows > 0) {
                 while ($value = $getdata->fetch_assoc()) {
                     // var_dump($value['photo']);
             ?>
-            <tr>
-                <td>
-                    <?= $value['id'] ?>
-                </td>
-                <td>
-                    <?= $value['application_no'] ?>
-                </td>
-                <td>
-                    <?php echo $value['fullname'] ?>
-                </td>
-                <td>
-                    <?php if ($value['status'] == 'Pending') {
+                <tr>
+                    <td>
+                        <?= $value['id'] ?>
+                    </td>
+                    <td>
+                        <?= $value['application_no'] ?>
+                    </td>
+                    <td>
+                        <?php echo $value['fullname'] ?>
+                    </td>
+                    <td>
+                        <?php if ($value['status'] == 'Pending') {
                                 echo '<span style="color:blue"> Pending </span>';
                             } elseif ($value['status'] == 'Accept') {
                                 echo '<span style="color:green"> Accept </span>';
                             } else {
                                 echo '<span style="color:Red"> Reject </span>';
                             } ?>
-                </td>
-                <td><img src="image/<?= $value['photo'] ?>" width="61px" height="51px" alt=""></td>
-                <td class=".btn">
-                    <a href="user_details.php?id=<?php echo $value['id'] ?>">
-                        <button class="viewdata" type="submit">View Data</button>
-                    </a>
-                    <button id="<?php echo $value['id'] ?>" class="update" type="button">Edit</button></a>
-                    <button class="delete" type="button" id="<?php echo $value['id'] ?>">Delete</button>
+                    </td>
+                    <td><img src="image/<?= $value['photo'] ?>" width="61px" height="51px" alt=""></td>
+                    <td class=".btn">
+                        <a href="user_details.php?id=<?php echo $value['id'] ?>">
+                            <button class="viewdata" type="submit">View Data</button>
+                        </a>
+                        <button id="<?php echo $value['id'] ?>" class="update" type="button">Edit</button></a>
+                        <button class="delete" type="button" id="<?php echo $value['id'] ?>">Delete</button>
 
-                </td>
-            </tr>
-            <?php
+                    </td>
+                </tr>
+                <?php
                 }
             } else {
                 echo '<td colspan="7" style="text-align: center;">Data Not Found</td>';
             }
             ?>
-            <div id="get_data"></div>
-        </tbody>
-    </table>
+                <div id="get_data"></div>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+
 
 <!-- new registerd -->
 <div class="body_regis" style="display: none;">
@@ -96,7 +101,8 @@ $connection = new connection();
         }
         ?>
         <p id="ages" style="color: red; font-size: 20px;"></p>
-        <form action="submit/insert_reg.php" method="post" class="form" enctype="multipart/form-data" onchange="submit()">
+        <form action="submit/insert_reg.php" method="post" class="form" enctype="multipart/form-data"
+            onchange="submit()">
             <input type="hidden" name="application_no" value="<?php echo (rand(100009, 999999)); ?>">
             <div class="user__details">
                 <div class="input__box">
@@ -120,7 +126,7 @@ $connection = new connection();
 
                 <div class="input__box">
                     <span class="details">Date Of Birth </span>
-                    <input type="date" class="dob js-field--dob date-mask" id="dob" name="dob"  onchange="myFunction()">
+                    <input type="date" class="dob js-field--dob date-mask" id="dob" name="dob" onchange="myFunction()">
                 </div>
                 <div class="input__box">
                     <span class="details">Blood Group </span>
@@ -255,21 +261,23 @@ $connection = new connection();
         <p id="ages" style="color: red; font-size: 20px;"></p>
         <form action="submit/insert_reg.php" method="post" class="form" enctype="multipart/form-data">
 
-            <input type='text' name='userid' id='userid' class="userid" style="display: none;"/>
+            <input type='text' name='userid' id='userid' class="userid" style="display: none;" />
             <div style="justify-content: end; display: flex;">
-                     Application NO : 
-                    <span id="application_no" class="appli_no" ></span>
-                    <input type="text" name="application_no" value="" class="appli_no" style="display: none;">
+                Application NO :
+                <span id="application_no" class="appli_no"></span>
+                <input type="text" name="application_no" value="" class="appli_no" style="display: none;">
             </div>
 
             <div class="user__details">
                 <div class="input__box">
                     <span class="details">Full Name</span>
-                    <input type="text" id="fullname" class="fullname f1" name="fullname" value="" placeholder="Enter Full Name">
+                    <input type="text" id="fullname" class="fullname f1" name="fullname" value=""
+                        placeholder="Enter Full Name">
                 </div>
                 <div class="input__box">
                     <span class="details">Father Name</span>
-                    <input type="text" id="fathername" class="fathername f2" name="fathername" placeholder="Enter Father Name">
+                    <input type="text" id="fathername" class="fathername f2" name="fathername"
+                        placeholder="Enter Father Name">
                 </div>
                 <div class="input__box">
                     <span class="details">Gender </span>
@@ -283,18 +291,18 @@ $connection = new connection();
 
                 <div class="input__box">
                     <span class="details">Date Of Birth </span>
-                    <input type="date" class="dob js-field--dob date-mask" id="dob" name="dob" >
+                    <input type="date" class="dob js-field--dob date-mask" id="dob" name="dob">
                 </div>
                 <div class="input__box">
                     <span class="details">Blood Group</span>
                     <select class="selecttag blo_group" id="bloodgroup" name="bloodgroup">
                         <option>Select Blood Group</option>
-                        <option value="A+" >A+</option>
-                        <option value="A-" >A-</option>
-                        <option value="B+" >B+</option>
-                        <option value="B-" >B-</option>
-                        <option value="O+" >O+</option>
-                        <option value="O-" >O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
                         <option value="AB+">AB+</option>
                         <option value="AB-">AB-</option>
                     </select>
@@ -324,15 +332,18 @@ $connection = new connection();
             <div class="user__details">
                 <div class="input__box">
                     <span class="details">Address Line 1</span>
-                    <input type="text" class="address1 addr1" id="address1" name="address1" placeholder="Address Line 1">
+                    <input type="text" class="address1 addr1" id="address1" name="address1"
+                        placeholder="Address Line 1">
                 </div>
                 <div class="input__box">
                     <span class="details">Aadhar Number</span>
-                    <input type="text" class="aadhar_number aad_numb" id="aadhar_number" name="aadhar_number"  placeholder="0000 0000 0000">
+                    <input type="text" class="aadhar_number aad_numb" id="aadhar_number" name="aadhar_number"
+                        placeholder="0000 0000 0000">
                 </div>
                 <div class="input__box">
                     <span class="details">Address Line 2</span>
-                    <input type="text" class="address2 addr2" id="address2" name="address2" placeholder="Address Line 2">
+                    <input type="text" class="address2 addr2" id="address2" name="address2"
+                        placeholder="Address Line 2">
                 </div>
             </div>
             <div class="user__details">
@@ -354,7 +365,7 @@ $connection = new connection();
                     <span class="details">State</span>
                     <!-- <select onchange="print_city('state', this.selectedIndex);" id="sts" name="state" class="selecttag">
                     </select> -->
-                    <input id="sts" name="state" type="text" class="state_s"> 
+                    <input id="sts" name="state" type="text" class="state_s">
                 </div>
                 <div class="input__box">
                     <span class="details">District</span>
@@ -369,7 +380,7 @@ $connection = new connection();
                 </div>
                 <div class="input__box">
                     <span class="details">Pincode </span>
-                    <input type="text" class="pincode pin_code" id="pincode" name="pincode"  placeholder="Pincode">
+                    <input type="text" class="pincode pin_code" id="pincode" name="pincode" placeholder="Pincode">
                 </div>
                 <div class="input__box" style="display: none;">
                     <span class="details">Status</span>
@@ -405,34 +416,11 @@ $connection = new connection();
 </div>
 
 
-
-<script>
-    function fetch_data(page){
-        $.ajax({
-            url : 'pagination.php',
-            method : 'POST',
-            data :{
-                page : page
-            },
-            success: function (data) {
-                $('#get_data').html(data);
-            }
-        });
-    }
-    fetch_data();
-
-    $(document).on('click','.page-item',function (){
-        var page = $(this).attr('id');
-        fetch_data(page);
-    });
-</script>
-<script src="js/pagination.js"></script>
 <script src="js/adminscript.js"></script>
-<!-- <script src="js/agecalulate.js"></script> -->
 
 <script>
 // $( document).ready(function() {
-    
+
 //     console.log('validation-3');
 
 //     function submit() {
@@ -476,7 +464,7 @@ $connection = new connection();
 //                 validation = false;
 //             }
 //         }
- 
+
 //         if (!$('#fathername').val().trim()) {
 //             $('#error_fathername').show();
 //             error_fathername = "*Father Name Required";
@@ -489,28 +477,28 @@ $connection = new connection();
 //                 validation = false;
 //             }
 //         }
- 
+
 //         // gender validation
 //         if (!$('#gender').val()) {
 //             $('#error_gender').show();
 //             error_gender = "*Gender Required";
 //             validation = false;
 //         }
- 
+
 //         // Date Of Birth  validation 
 //         if (!$('#dob').val()) {
 //             $('#error_dob').show();
 //             error_dob = "*Date Of Birth Required";
 //             validation = false;
 //         }
- 
+
 //         // Blood Group validation
 //         if (!$('#bloodgroup').val()) {
 //             $('#error_bloodgroup').show();
 //             error_bloodgroup = "*Blood Group Required";
 //             validation = false;
 //         }
- 
+
 //         // Phone Number validation
 //         if (!$('#p_number').val().trim()) {
 //             $('#error_phonenumber').show();
@@ -524,7 +512,7 @@ $connection = new connection();
 //                 validation = false;
 //             }
 //         }
- 
+
 //         // email validation
 //         if (!$('#email').val().trim()) {
 //             $('#error_email').show();
@@ -538,7 +526,7 @@ $connection = new connection();
 //                 validation = false;
 //             }
 //         }
- 
+
 //         // Password validation
 //         if (!$('#password').val().trim()) {
 //             $('#error_password').show();
@@ -565,7 +553,7 @@ $connection = new connection();
 //             error_address2 = "*Address Line 2 required";
 //             validation = false;
 //         }
-      
+
 //      // Aadhar Number validation
 //         if (!$('#aadhar_number').val().trim()) {
 //             $('#error_aadhernumber').show();
@@ -586,21 +574,21 @@ $connection = new connection();
 //             error_licensetype = "*License Type required";
 //             validation = false;
 //         }
- 
+
 //         // Photo validation
 //         if (!$('#imageupload').val().trim()) {
 //             $('#error_photo').show();
 //             error_photo = "*Photo Upload required";
 //             validation = false;
 //         }
- 
+
 //         // State validation
 //         if (!$('#sts').val().trim()) {
 //             $('#error_state').show();
 //             error_state = "*State required";
 //             validation = false;
 //         }
- 
+
 //         // District validation
 //         if (!$('#state').val().trim()) {
 //             $('#error_district').show();
@@ -620,7 +608,7 @@ $connection = new connection();
 //                 validation = false;
 //             }
 //         }
- 
+
 //         // Pincode validation
 //         if (!$('#pincode').val().trim()) {
 //             $('#error_pincode').show();
